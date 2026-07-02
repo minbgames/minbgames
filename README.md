@@ -13,11 +13,6 @@
 <details><summary><b>2017</b> — 5 contributions</summary><br/><img src="dist/y2017.svg" width="100%" alt="2017 contribution terrain"/></details>
 <details><summary><b>2016</b> — 3 contributions</summary><br/><img src="dist/y2016.svg" width="100%" alt="2016 contribution terrain"/></details>
 
-<sub>
-
-**3D COMMIT TERRAIN** — every day of the year as a voxel, height & color follow commit count.<br/>
-Hand-built SVG generator, zero dependencies, redrawn every night by [a single script](src/build.js).
-
-</sub>
+<sub>**3D COMMIT TERRAIN** — every day as a voxel, height and color follow commit count · hand-built SVG generator, zero dependencies, redrawn nightly by [a single script](src/build.js)</sub>
 
 </div>
