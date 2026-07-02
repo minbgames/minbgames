@@ -1,0 +1,513 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 480" width="1080" height="480" role="img" aria-label="minbgames commit skyline">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#050514"/>
+    <stop offset="0.55" stop-color="#0e0b30"/>
+    <stop offset="0.85" stop-color="#2a1157"/>
+    <stop offset="1" stop-color="#45175f"/>
+  </linearGradient>
+  <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#1b0d3a"/>
+    <stop offset="1" stop-color="#04040f"/>
+  </linearGradient>
+  <linearGradient id="hz" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#00e5ff"/>
+    <stop offset="0.5" stop-color="#ff3fd8"/>
+    <stop offset="1" stop-color="#9d5cff"/>
+  </linearGradient>
+  <linearGradient id="bldg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#12122e"/>
+    <stop offset="1" stop-color="#0a0a20"/>
+  </linearGradient>
+  <linearGradient id="fadeG" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#fff" stop-opacity="0.85"/>
+    <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="tail" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+    <stop offset="1" stop-color="#cfe8ff"/>
+  </linearGradient>
+  <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+    <feGaussianBlur stdDeviation="2.4" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="blur1"><feGaussianBlur stdDeviation="1.4"/></filter>
+  <mask id="fade">
+    <rect x="0" y="350" width="1080" height="130" fill="url(#fadeG)"/>
+  </mask>
+</defs>
+<style>
+  text{font-family:'JetBrains Mono','Fira Code',ui-monospace,monospace}
+  .title{font-size:30px;font-weight:700;letter-spacing:8px;fill:#00e5ff;animation:fk 7s infinite}
+  .sub{font-size:11px;letter-spacing:3px;fill:#8888c8}
+  .total{font-size:34px;font-weight:700;letter-spacing:2px;fill:#ff3fd8}
+  .stats{font-size:12px;letter-spacing:2px;fill:#6fb9d4}
+  .tick{font-size:9px;letter-spacing:1px;fill:#565694}
+  .wl{fill:#ffd98c}
+  .wd{fill:#151533}
+  .wf{animation:wf 4.2s infinite}
+  .s{animation:tw 3s ease-in-out infinite both}
+  .b{transform-box:fill-box;transform-origin:center bottom;animation:rise .9s cubic-bezier(.22,1,.36,1) both}
+  .beacon{animation:bk 2.4s infinite}
+  .ref{animation:bob 8s ease-in-out infinite}
+  .shoot{animation:sh 14s linear infinite}
+  @keyframes rise{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+  @keyframes tw{0%,100%{opacity:.12}50%{opacity:.9}}
+  @keyframes wf{0%,64%,100%{opacity:1}70%{opacity:.12}76%{opacity:1}90%{opacity:.35}94%{opacity:1}}
+  @keyframes bk{0%,68%,100%{opacity:.15}78%,88%{opacity:1}}
+  @keyframes fk{0%,100%{opacity:1}3%{opacity:.55}5%{opacity:1}54%{opacity:1}55%{opacity:.5}57%{opacity:1}}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+  @keyframes sh{0%,88%{transform:translate(180px,30px);opacity:0}90%{opacity:1}100%{transform:translate(560px,150px);opacity:0}}
+</style>
+<rect width="1080" height="350" fill="url(#sky)"/>
+<rect y="350" width="1080" height="130" fill="url(#water)"/>
+<circle class="s" cx="224.4" cy="46.3" r="1.29" fill="#cfe8ff" style="animation-duration:3.9s;animation-delay:1.7s"/><circle class="s" cx="421.0" cy="103.5" r="1.00" fill="#cfe8ff" style="animation-duration:3.6s;animation-delay:2.2s"/><circle class="s" cx="700.5" cy="46.4" r="0.90" fill="#cfe8ff" style="animation-duration:3.2s;animation-delay:0.8s"/><circle class="s" cx="838.1" cy="110.1" r="1.42" fill="#cfe8ff" style="animation-duration:3.9s;animation-delay:0.3s"/><circle class="s" cx="239.2" cy="49.5" r="0.90" fill="#cfe8ff" style="animation-duration:2.9s;animation-delay:1.6s"/><circle class="s" cx="771.6" cy="137.5" r="0.61" fill="#cfe8ff" style="animation-duration:2.4s;animation-delay:2.7s"/><circle class="s" cx="222.4" cy="140.6" r="0.62" fill="#cfe8ff" style="animation-duration:4.4s;animation-delay:0.1s"/><circle class="s" cx="604.3" cy="88.1" r="0.83" fill="#cfe8ff" style="animation-duration:2.8s;animation-delay:0.0s"/><circle class="s" cx="182.5" cy="56.9" r="0.76" fill="#cfe8ff" style="animation-duration:3.7s;animation-delay:1.2s"/><circle class="s" cx="611.1" cy="89.5" r="0.92" fill="#cfe8ff" style="animation-duration:4.6s;animation-delay:3.8s"/><circle class="s" cx="725.5" cy="21.4" r="0.58" fill="#cfe8ff" style="animation-duration:2.8s;animation-delay:0.5s"/><circle class="s" cx="170.3" cy="58.1" r="0.76" fill="#cfe8ff" style="animation-duration:2.7s;animation-delay:0.6s"/><circle class="s" cx="198.2" cy="138.7" r="0.99" fill="#cfe8ff" style="animation-duration:3.6s;animation-delay:2.4s"/><circle class="s" cx="610.3" cy="23.1" r="0.59" fill="#cfe8ff" style="animation-duration:2.8s;animation-delay:3.3s"/><circle class="s" cx="264.2" cy="62.0" r="0.98" fill="#cfe8ff" style="animation-duration:3.8s;animation-delay:2.4s"/><circle class="s" cx="788.3" cy="159.3" r="0.55" fill="#cfe8ff" style="animation-duration:4.6s;animation-delay:2.6s"/><circle class="s" cx="353.7" cy="81.3" r="1.26" fill="#cfe8ff" style="animation-duration:4.5s;animation-delay:3.9s"/><circle class="s" cx="683.3" cy="113.0" r="0.93" fill="#cfe8ff" style="animation-duration:3.0s;animation-delay:0.1s"/><circle class="s" cx="416.3" cy="121.8" r="1.39" fill="#cfe8ff" style="animation-duration:3.0s;animation-delay:2.5s"/><circle class="s" cx="225.7" cy="45.0" r="0.94" fill="#cfe8ff" style="animation-duration:4.5s;animation-delay:3.7s"/><circle class="s" cx="99.7" cy="19.3" r="0.93" fill="#cfe8ff" style="animation-duration:4.0s;animation-delay:2.2s"/><circle class="s" cx="725.2" cy="76.6" r="1.17" fill="#cfe8ff" style="animation-duration:3.4s;animation-delay:1.6s"/><circle class="s" cx="716.2" cy="32.0" r="1.20" fill="#cfe8ff" style="animation-duration:2.2s;animation-delay:0.5s"/><circle class="s" cx="457.4" cy="131.1" r="1.06" fill="#cfe8ff" style="animation-duration:3.7s;animation-delay:0.7s"/><circle class="s" cx="732.4" cy="93.3" r="1.25" fill="#cfe8ff" style="animation-duration:2.8s;animation-delay:1.6s"/><circle class="s" cx="464.9" cy="163.9" r="0.52" fill="#cfe8ff" style="animation-duration:2.6s;animation-delay:1.8s"/><circle class="s" cx="736.7" cy="165.8" r="0.83" fill="#cfe8ff" style="animation-duration:4.5s;animation-delay:1.5s"/><circle class="s" cx="418.6" cy="167.1" r="1.29" fill="#cfe8ff" style="animation-duration:3.1s;animation-delay:0.3s"/><circle class="s" cx="550.4" cy="33.0" r="0.72" fill="#cfe8ff" style="animation-duration:4.1s;animation-delay:2.6s"/><circle class="s" cx="532.9" cy="29.2" r="1.05" fill="#cfe8ff" style="animation-duration:2.9s;animation-delay:0.1s"/><circle class="s" cx="848.2" cy="27.2" r="1.25" fill="#cfe8ff" style="animation-duration:2.9s;animation-delay:3.4s"/><circle class="s" cx="144.9" cy="51.4" r="0.65" fill="#cfe8ff" style="animation-duration:3.9s;animation-delay:1.4s"/><circle class="s" cx="871.4" cy="62.8" r="1.31" fill="#cfe8ff" style="animation-duration:4.5s;animation-delay:0.9s"/><circle class="s" cx="168.1" cy="144.2" r="1.27" fill="#cfe8ff" style="animation-duration:4.1s;animation-delay:2.5s"/><circle class="s" cx="544.3" cy="126.7" r="0.47" fill="#cfe8ff" style="animation-duration:4.6s;animation-delay:3.7s"/><circle class="s" cx="203.7" cy="66.3" r="0.42" fill="#cfe8ff" style="animation-duration:3.4s;animation-delay:0.2s"/><circle class="s" cx="683.0" cy="90.8" r="1.49" fill="#cfe8ff" style="animation-duration:3.1s;animation-delay:2.2s"/><circle class="s" cx="63.1" cy="163.5" r="0.62" fill="#cfe8ff" style="animation-duration:3.3s;animation-delay:1.4s"/><circle class="s" cx="716.0" cy="24.0" r="0.71" fill="#cfe8ff" style="animation-duration:2.6s;animation-delay:1.3s"/><circle class="s" cx="699.7" cy="176.0" r="0.88" fill="#cfe8ff" style="animation-duration:2.7s;animation-delay:1.4s"/><circle class="s" cx="866.1" cy="96.3" r="1.35" fill="#cfe8ff" style="animation-duration:2.7s;animation-delay:1.6s"/><circle class="s" cx="750.7" cy="61.7" r="0.98" fill="#cfe8ff" style="animation-duration:3.6s;animation-delay:3.4s"/><circle class="s" cx="405.1" cy="75.4" r="1.27" fill="#cfe8ff" style="animation-duration:4.9s;animation-delay:2.6s"/><circle class="s" cx="796.7" cy="153.9" r="0.66" fill="#cfe8ff" style="animation-duration:3.0s;animation-delay:3.4s"/><circle class="s" cx="528.9" cy="72.8" r="1.44" fill="#cfe8ff" style="animation-duration:3.8s;animation-delay:2.8s"/><circle class="s" cx="87.5" cy="115.9" r="1.12" fill="#cfe8ff" style="animation-duration:4.7s;animation-delay:1.6s"/><circle class="s" cx="405.0" cy="174.4" r="0.64" fill="#cfe8ff" style="animation-duration:4.2s;animation-delay:2.6s"/><circle class="s" cx="440.7" cy="97.5" r="1.30" fill="#cfe8ff" style="animation-duration:2.2s;animation-delay:0.5s"/><circle class="s" cx="927.2" cy="182.6" r="1.07" fill="#cfe8ff" style="animation-duration:4.8s;animation-delay:1.6s"/><circle class="s" cx="1015.3" cy="41.8" r="0.77" fill="#cfe8ff" style="animation-duration:2.3s;animation-delay:1.9s"/><circle class="s" cx="585.4" cy="86.7" r="1.48" fill="#cfe8ff" style="animation-duration:3.2s;animation-delay:3.1s"/><circle class="s" cx="743.9" cy="60.9" r="0.80" fill="#cfe8ff" style="animation-duration:2.3s;animation-delay:0.4s"/><circle class="s" cx="59.5" cy="109.2" r="1.07" fill="#cfe8ff" style="animation-duration:3.3s;animation-delay:1.2s"/><circle class="s" cx="321.2" cy="59.4" r="1.08" fill="#cfe8ff" style="animation-duration:2.5s;animation-delay:3.3s"/><circle class="s" cx="691.9" cy="99.6" r="0.45" fill="#cfe8ff" style="animation-duration:3.3s;animation-delay:2.4s"/><circle class="s" cx="938.1" cy="67.0" r="1.50" fill="#cfe8ff" style="animation-duration:3.3s;animation-delay:1.9s"/><circle class="s" cx="190.0" cy="99.6" r="1.34" fill="#cfe8ff" style="animation-duration:3.4s;animation-delay:1.0s"/><circle class="s" cx="631.2" cy="97.4" r="1.31" fill="#cfe8ff" style="animation-duration:2.7s;animation-delay:2.5s"/><circle class="s" cx="388.6" cy="40.7" r="0.98" fill="#cfe8ff" style="animation-duration:4.4s;animation-delay:1.0s"/><circle class="s" cx="1040.0" cy="134.7" r="0.54" fill="#cfe8ff" style="animation-duration:3.9s;animation-delay:3.1s"/><circle class="s" cx="441.0" cy="37.5" r="0.46" fill="#cfe8ff" style="animation-duration:3.4s;animation-delay:0.9s"/><circle class="s" cx="841.8" cy="20.8" r="0.88" fill="#cfe8ff" style="animation-duration:2.1s;animation-delay:1.8s"/><circle class="s" cx="517.5" cy="74.7" r="1.33" fill="#cfe8ff" style="animation-duration:4.7s;animation-delay:3.1s"/><circle class="s" cx="911.1" cy="97.6" r="0.81" fill="#cfe8ff" style="animation-duration:3.6s;animation-delay:0.8s"/><circle class="s" cx="206.9" cy="156.3" r="0.85" fill="#cfe8ff" style="animation-duration:3.2s;animation-delay:3.3s"/><circle class="s" cx="339.0" cy="72.1" r="0.42" fill="#cfe8ff" style="animation-duration:2.9s;animation-delay:0.1s"/><circle class="s" cx="441.7" cy="182.0" r="0.83" fill="#cfe8ff" style="animation-duration:2.4s;animation-delay:3.8s"/><circle class="s" cx="764.3" cy="128.9" r="0.85" fill="#cfe8ff" style="animation-duration:2.8s;animation-delay:3.7s"/><circle class="s" cx="674.5" cy="24.1" r="0.60" fill="#cfe8ff" style="animation-duration:2.2s;animation-delay:2.8s"/><circle class="s" cx="839.1" cy="110.4" r="0.66" fill="#cfe8ff" style="animation-duration:4.2s;animation-delay:1.9s"/><circle class="s" cx="501.2" cy="96.1" r="0.79" fill="#cfe8ff" style="animation-duration:2.5s;animation-delay:2.2s"/><circle class="s" cx="894.7" cy="37.8" r="0.78" fill="#cfe8ff" style="animation-duration:3.8s;animation-delay:0.1s"/><circle class="s" cx="394.1" cy="25.4" r="0.66" fill="#cfe8ff" style="animation-duration:4.8s;animation-delay:3.7s"/><circle class="s" cx="357.1" cy="85.2" r="0.91" fill="#cfe8ff" style="animation-duration:2.7s;animation-delay:0.8s"/><circle class="s" cx="382.3" cy="67.1" r="1.17" fill="#cfe8ff" style="animation-duration:2.7s;animation-delay:2.4s"/><circle class="s" cx="381.8" cy="116.9" r="0.89" fill="#cfe8ff" style="animation-duration:4.6s;animation-delay:0.0s"/><circle class="s" cx="592.5" cy="127.1" r="0.50" fill="#cfe8ff" style="animation-duration:4.7s;animation-delay:3.8s"/><circle class="s" cx="401.5" cy="29.5" r="1.02" fill="#cfe8ff" style="animation-duration:3.0s;animation-delay:2.5s"/><circle class="s" cx="809.7" cy="125.1" r="1.33" fill="#cfe8ff" style="animation-duration:3.0s;animation-delay:1.3s"/><circle class="s" cx="475.9" cy="16.9" r="1.17" fill="#cfe8ff" style="animation-duration:4.6s;animation-delay:3.4s"/><circle class="s" cx="157.5" cy="124.4" r="1.45" fill="#cfe8ff" style="animation-duration:2.2s;animation-delay:2.4s"/><circle class="s" cx="428.0" cy="139.9" r="1.28" fill="#cfe8ff" style="animation-duration:2.9s;animation-delay:1.1s"/><circle class="s" cx="804.0" cy="147.7" r="0.87" fill="#cfe8ff" style="animation-duration:4.9s;animation-delay:2.6s"/><circle class="s" cx="974.8" cy="20.8" r="1.48" fill="#cfe8ff" style="animation-duration:3.8s;animation-delay:0.1s"/>
+<g>
+    <circle cx="600" cy="84" r="40" fill="#f5ecd7" opacity="0.08"/>
+    <circle cx="600" cy="84" r="24" fill="#f5ecd7" opacity="0.92"/>
+    <circle cx="610" cy="76" r="21" fill="#0e0b30"/>
+  </g>
+<g class="shoot">
+    <line x1="0" y1="0" x2="70" y2="24" stroke="url(#tail)" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+<g class="ref" mask="url(#fade)" opacity="0.35" filter="url(#blur1)">
+  <use href="#city" transform="translate(0 700) scale(1 -1)"/>
+</g>
+<g id="city"><g class="b" style="animation-delay:0ms">
+    <title>2025-06-29 → 2025-07-05 · 5 commits</title>
+    <line x1="49.4" y1="119" x2="49.4" y2="132" stroke="#3a3a5e" stroke-width="1.2"/>
+      <circle class="beacon" cx="49.4" cy="118" r="1.8" fill="#ff3355" style="animation-delay:1.1s"/>
+    <rect x="41.9" y="132" width="15" height="218" fill="url(#bldg)"/>
+    <rect x="41.9" y="132" width="1.4" height="218" fill="#00e5ff" opacity="0.3"/>
+    <rect x="41.9" y="129.6" width="15" height="2.4" fill="#00e5ff" filter="url(#glow)"/>
+    <rect class="wl" x="44.3" y="139.0" width="2.6" height="3.6"/><rect class="wd" x="48.5" y="139.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="139.0" width="2.6" height="3.6"/><rect class="wl" x="44.3" y="146.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="146.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="146.0" width="2.6" height="3.6"/><rect class="wl" x="44.3" y="153.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="153.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="153.0" width="2.6" height="3.6"/><rect class="wl" x="44.3" y="160.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="160.0" width="2.6" height="3.6"/><rect class="wd" x="52.7" y="160.0" width="2.6" height="3.6"/><rect class="wl" x="44.3" y="167.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="167.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="167.0" width="2.6" height="3.6"/><rect class="wd" x="44.3" y="174.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="174.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="174.0" width="2.6" height="3.6"/><rect class="wd" x="44.3" y="181.0" width="2.6" height="3.6"/><rect class="wd" x="48.5" y="181.0" width="2.6" height="3.6"/><rect class="wl wf" x="52.7" y="181.0" width="2.6" height="3.6" style="animation-delay:4.3s"/><rect class="wl" x="44.3" y="188.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="188.0" width="2.6" height="3.6"/><rect class="wl wf" x="52.7" y="188.0" width="2.6" height="3.6" style="animation-delay:1.1s"/><rect class="wl" x="44.3" y="195.0" width="2.6" height="3.6"/><rect class="wd" x="48.5" y="195.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="195.0" width="2.6" height="3.6"/><rect class="wl" x="44.3" y="202.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="202.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="202.0" width="2.6" height="3.6"/><rect class="wl" x="44.3" y="209.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="209.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="209.0" width="2.6" height="3.6"/><rect class="wl" x="44.3" y="216.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="216.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="216.0" width="2.6" height="3.6"/><rect class="wl" x="44.3" y="223.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="223.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="223.0" width="2.6" height="3.6"/><rect class="wl" x="44.3" y="230.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="230.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="230.0" width="2.6" height="3.6"/><rect class="wd" x="44.3" y="237.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="237.0" width="2.6" height="3.6"/><rect class="wd" x="52.7" y="237.0" width="2.6" height="3.6"/><rect class="wl" x="44.3" y="244.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="244.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="244.0" width="2.6" height="3.6"/><rect class="wl" x="44.3" y="251.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="251.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="251.0" width="2.6" height="3.6"/><rect class="wl" x="44.3" y="258.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="258.0" width="2.6" height="3.6"/><rect class="wl wf" x="52.7" y="258.0" width="2.6" height="3.6" style="animation-delay:1.2s"/><rect class="wl" x="44.3" y="265.0" width="2.6" height="3.6"/><rect class="wd" x="48.5" y="265.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="265.0" width="2.6" height="3.6"/><rect class="wl wf" x="44.3" y="272.0" width="2.6" height="3.6" style="animation-delay:4.2s"/><rect class="wl" x="48.5" y="272.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="272.0" width="2.6" height="3.6"/><rect class="wl" x="44.3" y="279.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="279.0" width="2.6" height="3.6"/><rect class="wl wf" x="52.7" y="279.0" width="2.6" height="3.6" style="animation-delay:0.4s"/><rect class="wl" x="44.3" y="286.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="286.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="286.0" width="2.6" height="3.6"/><rect class="wl" x="44.3" y="293.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="293.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="293.0" width="2.6" height="3.6"/><rect class="wl" x="44.3" y="300.0" width="2.6" height="3.6"/><rect class="wd" x="48.5" y="300.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="300.0" width="2.6" height="3.6"/><rect class="wl" x="44.3" y="307.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="307.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="307.0" width="2.6" height="3.6"/><rect class="wl" x="44.3" y="314.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="314.0" width="2.6" height="3.6"/><rect class="wd" x="52.7" y="314.0" width="2.6" height="3.6"/><rect class="wl" x="44.3" y="321.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="321.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="321.0" width="2.6" height="3.6"/><rect class="wl" x="44.3" y="328.0" width="2.6" height="3.6"/><rect class="wd" x="48.5" y="328.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="328.0" width="2.6" height="3.6"/><rect class="wl" x="44.3" y="335.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="335.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="335.0" width="2.6" height="3.6"/><rect class="wl" x="44.3" y="342.0" width="2.6" height="3.6"/><rect class="wl" x="48.5" y="342.0" width="2.6" height="3.6"/><rect class="wl" x="52.7" y="342.0" width="2.6" height="3.6"/>
+  </g>
+<g class="b" style="animation-delay:16ms">
+    <title>2025-07-06 → 2025-07-12 · 0 commits</title>
+    
+    <rect x="60.8" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="60.8" y="340" width="1.4" height="10" fill="#ff3fd8" opacity="0.3"/>
+    <rect x="60.8" y="337.6" width="15" height="2.4" fill="#ff3fd8" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:32ms">
+    <title>2025-07-13 → 2025-07-19 · 0 commits</title>
+    
+    <rect x="79.7" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="79.7" y="340" width="1.4" height="10" fill="#9d5cff" opacity="0.3"/>
+    <rect x="79.7" y="337.6" width="15" height="2.4" fill="#9d5cff" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:48ms">
+    <title>2025-07-20 → 2025-07-26 · 0 commits</title>
+    
+    <rect x="98.5" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="98.5" y="340" width="1.4" height="10" fill="#3cf5c5" opacity="0.3"/>
+    <rect x="98.5" y="337.6" width="15" height="2.4" fill="#3cf5c5" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:64ms">
+    <title>2025-07-27 → 2025-08-02 · 0 commits</title>
+    
+    <rect x="117.4" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="117.4" y="340" width="1.4" height="10" fill="#ffb443" opacity="0.3"/>
+    <rect x="117.4" y="337.6" width="15" height="2.4" fill="#ffb443" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:80ms">
+    <title>2025-08-03 → 2025-08-09 · 0 commits</title>
+    
+    <rect x="136.3" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="136.3" y="340" width="1.4" height="10" fill="#00e5ff" opacity="0.3"/>
+    <rect x="136.3" y="337.6" width="15" height="2.4" fill="#00e5ff" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:96ms">
+    <title>2025-08-10 → 2025-08-16 · 0 commits</title>
+    
+    <rect x="155.1" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="155.1" y="340" width="1.4" height="10" fill="#ff3fd8" opacity="0.3"/>
+    <rect x="155.1" y="337.6" width="15" height="2.4" fill="#ff3fd8" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:112ms">
+    <title>2025-08-17 → 2025-08-23 · 1 commit</title>
+    
+    <rect x="174" y="273" width="15" height="77" fill="url(#bldg)"/>
+    <rect x="174" y="273" width="1.4" height="77" fill="#9d5cff" opacity="0.3"/>
+    <rect x="174" y="270.6" width="15" height="2.4" fill="#9d5cff" filter="url(#glow)"/>
+    <rect class="wd" x="176.4" y="280.0" width="2.6" height="3.6"/><rect class="wd" x="180.6" y="280.0" width="2.6" height="3.6"/><rect class="wl" x="184.8" y="280.0" width="2.6" height="3.6"/><rect class="wl" x="176.4" y="287.0" width="2.6" height="3.6"/><rect class="wl" x="180.6" y="287.0" width="2.6" height="3.6"/><rect class="wd" x="184.8" y="287.0" width="2.6" height="3.6"/><rect class="wd" x="176.4" y="294.0" width="2.6" height="3.6"/><rect class="wd" x="180.6" y="294.0" width="2.6" height="3.6"/><rect class="wl" x="184.8" y="294.0" width="2.6" height="3.6"/><rect class="wd" x="176.4" y="301.0" width="2.6" height="3.6"/><rect class="wd" x="180.6" y="301.0" width="2.6" height="3.6"/><rect class="wl" x="184.8" y="301.0" width="2.6" height="3.6"/><rect class="wd" x="176.4" y="308.0" width="2.6" height="3.6"/><rect class="wd" x="180.6" y="308.0" width="2.6" height="3.6"/><rect class="wd" x="184.8" y="308.0" width="2.6" height="3.6"/><rect class="wl" x="176.4" y="315.0" width="2.6" height="3.6"/><rect class="wd" x="180.6" y="315.0" width="2.6" height="3.6"/><rect class="wd" x="184.8" y="315.0" width="2.6" height="3.6"/><rect class="wd" x="176.4" y="322.0" width="2.6" height="3.6"/><rect class="wd" x="180.6" y="322.0" width="2.6" height="3.6"/><rect class="wd" x="184.8" y="322.0" width="2.6" height="3.6"/><rect class="wd" x="176.4" y="329.0" width="2.6" height="3.6"/><rect class="wd" x="180.6" y="329.0" width="2.6" height="3.6"/><rect class="wd" x="184.8" y="329.0" width="2.6" height="3.6"/><rect class="wl wf" x="176.4" y="336.0" width="2.6" height="3.6" style="animation-delay:3.6s"/><rect class="wd" x="180.6" y="336.0" width="2.6" height="3.6"/><rect class="wd" x="184.8" y="336.0" width="2.6" height="3.6"/><rect class="wd" x="176.4" y="343.0" width="2.6" height="3.6"/><rect class="wl" x="180.6" y="343.0" width="2.6" height="3.6"/><rect class="wl" x="184.8" y="343.0" width="2.6" height="3.6"/>
+  </g>
+<g class="b" style="animation-delay:128ms">
+    <title>2025-08-24 → 2025-08-30 · 1 commit</title>
+    
+    <rect x="192.9" y="273" width="15" height="77" fill="url(#bldg)"/>
+    <rect x="192.9" y="273" width="1.4" height="77" fill="#3cf5c5" opacity="0.3"/>
+    <rect x="192.9" y="270.6" width="15" height="2.4" fill="#3cf5c5" filter="url(#glow)"/>
+    <rect class="wd" x="195.3" y="280.0" width="2.6" height="3.6"/><rect class="wd" x="199.5" y="280.0" width="2.6" height="3.6"/><rect class="wd" x="203.7" y="280.0" width="2.6" height="3.6"/><rect class="wl" x="195.3" y="287.0" width="2.6" height="3.6"/><rect class="wl" x="199.5" y="287.0" width="2.6" height="3.6"/><rect class="wd" x="203.7" y="287.0" width="2.6" height="3.6"/><rect class="wl" x="195.3" y="294.0" width="2.6" height="3.6"/><rect class="wd" x="199.5" y="294.0" width="2.6" height="3.6"/><rect class="wl wf" x="203.7" y="294.0" width="2.6" height="3.6" style="animation-delay:1.7s"/><rect class="wd" x="195.3" y="301.0" width="2.6" height="3.6"/><rect class="wl" x="199.5" y="301.0" width="2.6" height="3.6"/><rect class="wd" x="203.7" y="301.0" width="2.6" height="3.6"/><rect class="wd" x="195.3" y="308.0" width="2.6" height="3.6"/><rect class="wd" x="199.5" y="308.0" width="2.6" height="3.6"/><rect class="wl" x="203.7" y="308.0" width="2.6" height="3.6"/><rect class="wl" x="195.3" y="315.0" width="2.6" height="3.6"/><rect class="wd" x="199.5" y="315.0" width="2.6" height="3.6"/><rect class="wl" x="203.7" y="315.0" width="2.6" height="3.6"/><rect class="wd" x="195.3" y="322.0" width="2.6" height="3.6"/><rect class="wd" x="199.5" y="322.0" width="2.6" height="3.6"/><rect class="wd" x="203.7" y="322.0" width="2.6" height="3.6"/><rect class="wl" x="195.3" y="329.0" width="2.6" height="3.6"/><rect class="wl" x="199.5" y="329.0" width="2.6" height="3.6"/><rect class="wd" x="203.7" y="329.0" width="2.6" height="3.6"/><rect class="wd" x="195.3" y="336.0" width="2.6" height="3.6"/><rect class="wl" x="199.5" y="336.0" width="2.6" height="3.6"/><rect class="wl" x="203.7" y="336.0" width="2.6" height="3.6"/><rect class="wl wf" x="195.3" y="343.0" width="2.6" height="3.6" style="animation-delay:0.1s"/><rect class="wd" x="199.5" y="343.0" width="2.6" height="3.6"/><rect class="wd" x="203.7" y="343.0" width="2.6" height="3.6"/>
+  </g>
+<g class="b" style="animation-delay:144ms">
+    <title>2025-08-31 → 2025-09-06 · 1 commit</title>
+    
+    <rect x="211.7" y="273" width="15" height="77" fill="url(#bldg)"/>
+    <rect x="211.7" y="273" width="1.4" height="77" fill="#ffb443" opacity="0.3"/>
+    <rect x="211.7" y="270.6" width="15" height="2.4" fill="#ffb443" filter="url(#glow)"/>
+    <rect class="wl" x="214.1" y="280.0" width="2.6" height="3.6"/><rect class="wl" x="218.3" y="280.0" width="2.6" height="3.6"/><rect class="wd" x="222.5" y="280.0" width="2.6" height="3.6"/><rect class="wl wf" x="214.1" y="287.0" width="2.6" height="3.6" style="animation-delay:0.2s"/><rect class="wd" x="218.3" y="287.0" width="2.6" height="3.6"/><rect class="wd" x="222.5" y="287.0" width="2.6" height="3.6"/><rect class="wd" x="214.1" y="294.0" width="2.6" height="3.6"/><rect class="wd" x="218.3" y="294.0" width="2.6" height="3.6"/><rect class="wl" x="222.5" y="294.0" width="2.6" height="3.6"/><rect class="wl" x="214.1" y="301.0" width="2.6" height="3.6"/><rect class="wd" x="218.3" y="301.0" width="2.6" height="3.6"/><rect class="wl" x="222.5" y="301.0" width="2.6" height="3.6"/><rect class="wd" x="214.1" y="308.0" width="2.6" height="3.6"/><rect class="wl" x="218.3" y="308.0" width="2.6" height="3.6"/><rect class="wd" x="222.5" y="308.0" width="2.6" height="3.6"/><rect class="wd" x="214.1" y="315.0" width="2.6" height="3.6"/><rect class="wd" x="218.3" y="315.0" width="2.6" height="3.6"/><rect class="wd" x="222.5" y="315.0" width="2.6" height="3.6"/><rect class="wl" x="214.1" y="322.0" width="2.6" height="3.6"/><rect class="wd" x="218.3" y="322.0" width="2.6" height="3.6"/><rect class="wl" x="222.5" y="322.0" width="2.6" height="3.6"/><rect class="wl" x="214.1" y="329.0" width="2.6" height="3.6"/><rect class="wl" x="218.3" y="329.0" width="2.6" height="3.6"/><rect class="wd" x="222.5" y="329.0" width="2.6" height="3.6"/><rect class="wd" x="214.1" y="336.0" width="2.6" height="3.6"/><rect class="wl" x="218.3" y="336.0" width="2.6" height="3.6"/><rect class="wl" x="222.5" y="336.0" width="2.6" height="3.6"/><rect class="wd" x="214.1" y="343.0" width="2.6" height="3.6"/><rect class="wd" x="218.3" y="343.0" width="2.6" height="3.6"/><rect class="wl wf" x="222.5" y="343.0" width="2.6" height="3.6" style="animation-delay:3.0s"/>
+  </g>
+<g class="b" style="animation-delay:160ms">
+    <title>2025-09-07 → 2025-09-13 · 0 commits</title>
+    
+    <rect x="230.6" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="230.6" y="340" width="1.4" height="10" fill="#00e5ff" opacity="0.3"/>
+    <rect x="230.6" y="337.6" width="15" height="2.4" fill="#00e5ff" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:176ms">
+    <title>2025-09-14 → 2025-09-20 · 0 commits</title>
+    
+    <rect x="249.5" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="249.5" y="340" width="1.4" height="10" fill="#ff3fd8" opacity="0.3"/>
+    <rect x="249.5" y="337.6" width="15" height="2.4" fill="#ff3fd8" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:192ms">
+    <title>2025-09-21 → 2025-09-27 · 1 commit</title>
+    
+    <rect x="268.3" y="273" width="15" height="77" fill="url(#bldg)"/>
+    <rect x="268.3" y="273" width="1.4" height="77" fill="#9d5cff" opacity="0.3"/>
+    <rect x="268.3" y="270.6" width="15" height="2.4" fill="#9d5cff" filter="url(#glow)"/>
+    <rect class="wd" x="270.7" y="280.0" width="2.6" height="3.6"/><rect class="wd" x="274.9" y="280.0" width="2.6" height="3.6"/><rect class="wd" x="279.1" y="280.0" width="2.6" height="3.6"/><rect class="wd" x="270.7" y="287.0" width="2.6" height="3.6"/><rect class="wd" x="274.9" y="287.0" width="2.6" height="3.6"/><rect class="wd" x="279.1" y="287.0" width="2.6" height="3.6"/><rect class="wd" x="270.7" y="294.0" width="2.6" height="3.6"/><rect class="wl wf" x="274.9" y="294.0" width="2.6" height="3.6" style="animation-delay:2.3s"/><rect class="wd" x="279.1" y="294.0" width="2.6" height="3.6"/><rect class="wl" x="270.7" y="301.0" width="2.6" height="3.6"/><rect class="wl" x="274.9" y="301.0" width="2.6" height="3.6"/><rect class="wd" x="279.1" y="301.0" width="2.6" height="3.6"/><rect class="wl" x="270.7" y="308.0" width="2.6" height="3.6"/><rect class="wd" x="274.9" y="308.0" width="2.6" height="3.6"/><rect class="wl" x="279.1" y="308.0" width="2.6" height="3.6"/><rect class="wl wf" x="270.7" y="315.0" width="2.6" height="3.6" style="animation-delay:3.2s"/><rect class="wl" x="274.9" y="315.0" width="2.6" height="3.6"/><rect class="wd" x="279.1" y="315.0" width="2.6" height="3.6"/><rect class="wd" x="270.7" y="322.0" width="2.6" height="3.6"/><rect class="wd" x="274.9" y="322.0" width="2.6" height="3.6"/><rect class="wd" x="279.1" y="322.0" width="2.6" height="3.6"/><rect class="wd" x="270.7" y="329.0" width="2.6" height="3.6"/><rect class="wd" x="274.9" y="329.0" width="2.6" height="3.6"/><rect class="wd" x="279.1" y="329.0" width="2.6" height="3.6"/><rect class="wd" x="270.7" y="336.0" width="2.6" height="3.6"/><rect class="wd" x="274.9" y="336.0" width="2.6" height="3.6"/><rect class="wd" x="279.1" y="336.0" width="2.6" height="3.6"/><rect class="wd" x="270.7" y="343.0" width="2.6" height="3.6"/><rect class="wl" x="274.9" y="343.0" width="2.6" height="3.6"/><rect class="wl" x="279.1" y="343.0" width="2.6" height="3.6"/>
+  </g>
+<g class="b" style="animation-delay:208ms">
+    <title>2025-09-28 → 2025-10-04 · 0 commits</title>
+    
+    <rect x="287.2" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="287.2" y="340" width="1.4" height="10" fill="#3cf5c5" opacity="0.3"/>
+    <rect x="287.2" y="337.6" width="15" height="2.4" fill="#3cf5c5" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:224ms">
+    <title>2025-10-05 → 2025-10-11 · 0 commits</title>
+    
+    <rect x="306.1" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="306.1" y="340" width="1.4" height="10" fill="#ffb443" opacity="0.3"/>
+    <rect x="306.1" y="337.6" width="15" height="2.4" fill="#ffb443" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:240ms">
+    <title>2025-10-12 → 2025-10-18 · 0 commits</title>
+    
+    <rect x="325" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="325" y="340" width="1.4" height="10" fill="#00e5ff" opacity="0.3"/>
+    <rect x="325" y="337.6" width="15" height="2.4" fill="#00e5ff" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:256ms">
+    <title>2025-10-19 → 2025-10-25 · 0 commits</title>
+    
+    <rect x="343.8" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="343.8" y="340" width="1.4" height="10" fill="#ff3fd8" opacity="0.3"/>
+    <rect x="343.8" y="337.6" width="15" height="2.4" fill="#ff3fd8" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:272ms">
+    <title>2025-10-26 → 2025-11-01 · 0 commits</title>
+    
+    <rect x="362.7" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="362.7" y="340" width="1.4" height="10" fill="#9d5cff" opacity="0.3"/>
+    <rect x="362.7" y="337.6" width="15" height="2.4" fill="#9d5cff" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:288ms">
+    <title>2025-11-02 → 2025-11-08 · 0 commits</title>
+    
+    <rect x="381.6" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="381.6" y="340" width="1.4" height="10" fill="#3cf5c5" opacity="0.3"/>
+    <rect x="381.6" y="337.6" width="15" height="2.4" fill="#3cf5c5" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:304ms">
+    <title>2025-11-09 → 2025-11-15 · 0 commits</title>
+    
+    <rect x="400.4" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="400.4" y="340" width="1.4" height="10" fill="#ffb443" opacity="0.3"/>
+    <rect x="400.4" y="337.6" width="15" height="2.4" fill="#ffb443" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:320ms">
+    <title>2025-11-16 → 2025-11-22 · 0 commits</title>
+    
+    <rect x="419.3" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="419.3" y="340" width="1.4" height="10" fill="#00e5ff" opacity="0.3"/>
+    <rect x="419.3" y="337.6" width="15" height="2.4" fill="#00e5ff" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:336ms">
+    <title>2025-11-23 → 2025-11-29 · 2 commits</title>
+    
+    <rect x="438.2" y="230" width="15" height="120" fill="url(#bldg)"/>
+    <rect x="438.2" y="230" width="1.4" height="120" fill="#ff3fd8" opacity="0.3"/>
+    <rect x="438.2" y="227.6" width="15" height="2.4" fill="#ff3fd8" filter="url(#glow)"/>
+    <rect class="wl" x="440.6" y="237.0" width="2.6" height="3.6"/><rect class="wl wf" x="444.8" y="237.0" width="2.6" height="3.6" style="animation-delay:4.1s"/><rect class="wd" x="449.0" y="237.0" width="2.6" height="3.6"/><rect class="wd" x="440.6" y="244.0" width="2.6" height="3.6"/><rect class="wd" x="444.8" y="244.0" width="2.6" height="3.6"/><rect class="wl" x="449.0" y="244.0" width="2.6" height="3.6"/><rect class="wl" x="440.6" y="251.0" width="2.6" height="3.6"/><rect class="wd" x="444.8" y="251.0" width="2.6" height="3.6"/><rect class="wl" x="449.0" y="251.0" width="2.6" height="3.6"/><rect class="wd" x="440.6" y="258.0" width="2.6" height="3.6"/><rect class="wl" x="444.8" y="258.0" width="2.6" height="3.6"/><rect class="wl" x="449.0" y="258.0" width="2.6" height="3.6"/><rect class="wd" x="440.6" y="265.0" width="2.6" height="3.6"/><rect class="wl" x="444.8" y="265.0" width="2.6" height="3.6"/><rect class="wd" x="449.0" y="265.0" width="2.6" height="3.6"/><rect class="wl" x="440.6" y="272.0" width="2.6" height="3.6"/><rect class="wl wf" x="444.8" y="272.0" width="2.6" height="3.6" style="animation-delay:0.9s"/><rect class="wd" x="449.0" y="272.0" width="2.6" height="3.6"/><rect class="wd" x="440.6" y="279.0" width="2.6" height="3.6"/><rect class="wl" x="444.8" y="279.0" width="2.6" height="3.6"/><rect class="wl wf" x="449.0" y="279.0" width="2.6" height="3.6" style="animation-delay:4.9s"/><rect class="wd" x="440.6" y="286.0" width="2.6" height="3.6"/><rect class="wd" x="444.8" y="286.0" width="2.6" height="3.6"/><rect class="wd" x="449.0" y="286.0" width="2.6" height="3.6"/><rect class="wl" x="440.6" y="293.0" width="2.6" height="3.6"/><rect class="wl" x="444.8" y="293.0" width="2.6" height="3.6"/><rect class="wd" x="449.0" y="293.0" width="2.6" height="3.6"/><rect class="wl" x="440.6" y="300.0" width="2.6" height="3.6"/><rect class="wd" x="444.8" y="300.0" width="2.6" height="3.6"/><rect class="wl" x="449.0" y="300.0" width="2.6" height="3.6"/><rect class="wd" x="440.6" y="307.0" width="2.6" height="3.6"/><rect class="wl" x="444.8" y="307.0" width="2.6" height="3.6"/><rect class="wl" x="449.0" y="307.0" width="2.6" height="3.6"/><rect class="wd" x="440.6" y="314.0" width="2.6" height="3.6"/><rect class="wd" x="444.8" y="314.0" width="2.6" height="3.6"/><rect class="wd" x="449.0" y="314.0" width="2.6" height="3.6"/><rect class="wl" x="440.6" y="321.0" width="2.6" height="3.6"/><rect class="wd" x="444.8" y="321.0" width="2.6" height="3.6"/><rect class="wl" x="449.0" y="321.0" width="2.6" height="3.6"/><rect class="wl" x="440.6" y="328.0" width="2.6" height="3.6"/><rect class="wd" x="444.8" y="328.0" width="2.6" height="3.6"/><rect class="wl" x="449.0" y="328.0" width="2.6" height="3.6"/><rect class="wd" x="440.6" y="335.0" width="2.6" height="3.6"/><rect class="wd" x="444.8" y="335.0" width="2.6" height="3.6"/><rect class="wl" x="449.0" y="335.0" width="2.6" height="3.6"/><rect class="wd" x="440.6" y="342.0" width="2.6" height="3.6"/><rect class="wl" x="444.8" y="342.0" width="2.6" height="3.6"/><rect class="wl wf" x="449.0" y="342.0" width="2.6" height="3.6" style="animation-delay:4.5s"/>
+  </g>
+<g class="b" style="animation-delay:352ms">
+    <title>2025-11-30 → 2025-12-06 · 0 commits</title>
+    
+    <rect x="457" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="457" y="340" width="1.4" height="10" fill="#9d5cff" opacity="0.3"/>
+    <rect x="457" y="337.6" width="15" height="2.4" fill="#9d5cff" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:368ms">
+    <title>2025-12-07 → 2025-12-13 · 0 commits</title>
+    
+    <rect x="475.9" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="475.9" y="340" width="1.4" height="10" fill="#3cf5c5" opacity="0.3"/>
+    <rect x="475.9" y="337.6" width="15" height="2.4" fill="#3cf5c5" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:384ms">
+    <title>2025-12-14 → 2025-12-20 · 0 commits</title>
+    
+    <rect x="494.8" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="494.8" y="340" width="1.4" height="10" fill="#ffb443" opacity="0.3"/>
+    <rect x="494.8" y="337.6" width="15" height="2.4" fill="#ffb443" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:400ms">
+    <title>2025-12-21 → 2025-12-27 · 0 commits</title>
+    
+    <rect x="513.6" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="513.6" y="340" width="1.4" height="10" fill="#00e5ff" opacity="0.3"/>
+    <rect x="513.6" y="337.6" width="15" height="2.4" fill="#00e5ff" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:416ms">
+    <title>2025-12-28 → 2026-01-03 · 1 commit</title>
+    
+    <rect x="532.5" y="273" width="15" height="77" fill="url(#bldg)"/>
+    <rect x="532.5" y="273" width="1.4" height="77" fill="#ff3fd8" opacity="0.3"/>
+    <rect x="532.5" y="270.6" width="15" height="2.4" fill="#ff3fd8" filter="url(#glow)"/>
+    <rect class="wd" x="534.9" y="280.0" width="2.6" height="3.6"/><rect class="wd" x="539.1" y="280.0" width="2.6" height="3.6"/><rect class="wl wf" x="543.3" y="280.0" width="2.6" height="3.6" style="animation-delay:2.2s"/><rect class="wl" x="534.9" y="287.0" width="2.6" height="3.6"/><rect class="wl" x="539.1" y="287.0" width="2.6" height="3.6"/><rect class="wd" x="543.3" y="287.0" width="2.6" height="3.6"/><rect class="wd" x="534.9" y="294.0" width="2.6" height="3.6"/><rect class="wl" x="539.1" y="294.0" width="2.6" height="3.6"/><rect class="wl" x="543.3" y="294.0" width="2.6" height="3.6"/><rect class="wl" x="534.9" y="301.0" width="2.6" height="3.6"/><rect class="wd" x="539.1" y="301.0" width="2.6" height="3.6"/><rect class="wl" x="543.3" y="301.0" width="2.6" height="3.6"/><rect class="wd" x="534.9" y="308.0" width="2.6" height="3.6"/><rect class="wd" x="539.1" y="308.0" width="2.6" height="3.6"/><rect class="wl" x="543.3" y="308.0" width="2.6" height="3.6"/><rect class="wd" x="534.9" y="315.0" width="2.6" height="3.6"/><rect class="wd" x="539.1" y="315.0" width="2.6" height="3.6"/><rect class="wd" x="543.3" y="315.0" width="2.6" height="3.6"/><rect class="wd" x="534.9" y="322.0" width="2.6" height="3.6"/><rect class="wd" x="539.1" y="322.0" width="2.6" height="3.6"/><rect class="wl" x="543.3" y="322.0" width="2.6" height="3.6"/><rect class="wd" x="534.9" y="329.0" width="2.6" height="3.6"/><rect class="wl" x="539.1" y="329.0" width="2.6" height="3.6"/><rect class="wl" x="543.3" y="329.0" width="2.6" height="3.6"/><rect class="wd" x="534.9" y="336.0" width="2.6" height="3.6"/><rect class="wd" x="539.1" y="336.0" width="2.6" height="3.6"/><rect class="wd" x="543.3" y="336.0" width="2.6" height="3.6"/><rect class="wd" x="534.9" y="343.0" width="2.6" height="3.6"/><rect class="wd" x="539.1" y="343.0" width="2.6" height="3.6"/><rect class="wd" x="543.3" y="343.0" width="2.6" height="3.6"/>
+  </g>
+<g class="b" style="animation-delay:432ms">
+    <title>2026-01-04 → 2026-01-10 · 0 commits</title>
+    
+    <rect x="551.4" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="551.4" y="340" width="1.4" height="10" fill="#9d5cff" opacity="0.3"/>
+    <rect x="551.4" y="337.6" width="15" height="2.4" fill="#9d5cff" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:448ms">
+    <title>2026-01-11 → 2026-01-17 · 0 commits</title>
+    
+    <rect x="570.2" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="570.2" y="340" width="1.4" height="10" fill="#3cf5c5" opacity="0.3"/>
+    <rect x="570.2" y="337.6" width="15" height="2.4" fill="#3cf5c5" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:464ms">
+    <title>2026-01-18 → 2026-01-24 · 1 commit</title>
+    
+    <rect x="589.1" y="273" width="15" height="77" fill="url(#bldg)"/>
+    <rect x="589.1" y="273" width="1.4" height="77" fill="#ffb443" opacity="0.3"/>
+    <rect x="589.1" y="270.6" width="15" height="2.4" fill="#ffb443" filter="url(#glow)"/>
+    <rect class="wd" x="591.5" y="280.0" width="2.6" height="3.6"/><rect class="wl" x="595.7" y="280.0" width="2.6" height="3.6"/><rect class="wd" x="599.9" y="280.0" width="2.6" height="3.6"/><rect class="wd" x="591.5" y="287.0" width="2.6" height="3.6"/><rect class="wd" x="595.7" y="287.0" width="2.6" height="3.6"/><rect class="wl" x="599.9" y="287.0" width="2.6" height="3.6"/><rect class="wd" x="591.5" y="294.0" width="2.6" height="3.6"/><rect class="wl" x="595.7" y="294.0" width="2.6" height="3.6"/><rect class="wl" x="599.9" y="294.0" width="2.6" height="3.6"/><rect class="wl wf" x="591.5" y="301.0" width="2.6" height="3.6" style="animation-delay:3.5s"/><rect class="wd" x="595.7" y="301.0" width="2.6" height="3.6"/><rect class="wd" x="599.9" y="301.0" width="2.6" height="3.6"/><rect class="wd" x="591.5" y="308.0" width="2.6" height="3.6"/><rect class="wl" x="595.7" y="308.0" width="2.6" height="3.6"/><rect class="wl" x="599.9" y="308.0" width="2.6" height="3.6"/><rect class="wl" x="591.5" y="315.0" width="2.6" height="3.6"/><rect class="wd" x="595.7" y="315.0" width="2.6" height="3.6"/><rect class="wl" x="599.9" y="315.0" width="2.6" height="3.6"/><rect class="wd" x="591.5" y="322.0" width="2.6" height="3.6"/><rect class="wd" x="595.7" y="322.0" width="2.6" height="3.6"/><rect class="wl" x="599.9" y="322.0" width="2.6" height="3.6"/><rect class="wd" x="591.5" y="329.0" width="2.6" height="3.6"/><rect class="wl wf" x="595.7" y="329.0" width="2.6" height="3.6" style="animation-delay:3.9s"/><rect class="wd" x="599.9" y="329.0" width="2.6" height="3.6"/><rect class="wl" x="591.5" y="336.0" width="2.6" height="3.6"/><rect class="wd" x="595.7" y="336.0" width="2.6" height="3.6"/><rect class="wd" x="599.9" y="336.0" width="2.6" height="3.6"/><rect class="wd" x="591.5" y="343.0" width="2.6" height="3.6"/><rect class="wd" x="595.7" y="343.0" width="2.6" height="3.6"/><rect class="wl" x="599.9" y="343.0" width="2.6" height="3.6"/>
+  </g>
+<g class="b" style="animation-delay:480ms">
+    <title>2026-01-25 → 2026-01-31 · 0 commits</title>
+    
+    <rect x="608" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="608" y="340" width="1.4" height="10" fill="#00e5ff" opacity="0.3"/>
+    <rect x="608" y="337.6" width="15" height="2.4" fill="#00e5ff" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:496ms">
+    <title>2026-02-01 → 2026-02-07 · 0 commits</title>
+    
+    <rect x="626.8" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="626.8" y="340" width="1.4" height="10" fill="#ff3fd8" opacity="0.3"/>
+    <rect x="626.8" y="337.6" width="15" height="2.4" fill="#ff3fd8" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:512ms">
+    <title>2026-02-08 → 2026-02-14 · 0 commits</title>
+    
+    <rect x="645.7" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="645.7" y="340" width="1.4" height="10" fill="#9d5cff" opacity="0.3"/>
+    <rect x="645.7" y="337.6" width="15" height="2.4" fill="#9d5cff" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:528ms">
+    <title>2026-02-15 → 2026-02-21 · 0 commits</title>
+    
+    <rect x="664.6" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="664.6" y="340" width="1.4" height="10" fill="#3cf5c5" opacity="0.3"/>
+    <rect x="664.6" y="337.6" width="15" height="2.4" fill="#3cf5c5" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:544ms">
+    <title>2026-02-22 → 2026-02-28 · 4 commits</title>
+    <line x1="690.9" y1="148" x2="690.9" y2="161" stroke="#3a3a5e" stroke-width="1.2"/>
+      <circle class="beacon" cx="690.9" cy="147" r="1.8" fill="#ff3355" style="animation-delay:0.1s"/>
+    <rect x="683.4" y="161" width="15" height="189" fill="url(#bldg)"/>
+    <rect x="683.4" y="161" width="1.4" height="189" fill="#ffb443" opacity="0.3"/>
+    <rect x="683.4" y="158.6" width="15" height="2.4" fill="#ffb443" filter="url(#glow)"/>
+    <rect class="wl" x="685.8" y="168.0" width="2.6" height="3.6"/><rect class="wd" x="690.0" y="168.0" width="2.6" height="3.6"/><rect class="wd" x="694.2" y="168.0" width="2.6" height="3.6"/><rect class="wl wf" x="685.8" y="175.0" width="2.6" height="3.6" style="animation-delay:4.3s"/><rect class="wl" x="690.0" y="175.0" width="2.6" height="3.6"/><rect class="wl" x="694.2" y="175.0" width="2.6" height="3.6"/><rect class="wd" x="685.8" y="182.0" width="2.6" height="3.6"/><rect class="wl" x="690.0" y="182.0" width="2.6" height="3.6"/><rect class="wl" x="694.2" y="182.0" width="2.6" height="3.6"/><rect class="wl" x="685.8" y="189.0" width="2.6" height="3.6"/><rect class="wd" x="690.0" y="189.0" width="2.6" height="3.6"/><rect class="wd" x="694.2" y="189.0" width="2.6" height="3.6"/><rect class="wl" x="685.8" y="196.0" width="2.6" height="3.6"/><rect class="wl" x="690.0" y="196.0" width="2.6" height="3.6"/><rect class="wl" x="694.2" y="196.0" width="2.6" height="3.6"/><rect class="wl" x="685.8" y="203.0" width="2.6" height="3.6"/><rect class="wl" x="690.0" y="203.0" width="2.6" height="3.6"/><rect class="wl" x="694.2" y="203.0" width="2.6" height="3.6"/><rect class="wd" x="685.8" y="210.0" width="2.6" height="3.6"/><rect class="wl" x="690.0" y="210.0" width="2.6" height="3.6"/><rect class="wl" x="694.2" y="210.0" width="2.6" height="3.6"/><rect class="wl wf" x="685.8" y="217.0" width="2.6" height="3.6" style="animation-delay:2.1s"/><rect class="wl" x="690.0" y="217.0" width="2.6" height="3.6"/><rect class="wl" x="694.2" y="217.0" width="2.6" height="3.6"/><rect class="wl" x="685.8" y="224.0" width="2.6" height="3.6"/><rect class="wl" x="690.0" y="224.0" width="2.6" height="3.6"/><rect class="wl" x="694.2" y="224.0" width="2.6" height="3.6"/><rect class="wl" x="685.8" y="231.0" width="2.6" height="3.6"/><rect class="wl wf" x="690.0" y="231.0" width="2.6" height="3.6" style="animation-delay:3.2s"/><rect class="wl" x="694.2" y="231.0" width="2.6" height="3.6"/><rect class="wl" x="685.8" y="238.0" width="2.6" height="3.6"/><rect class="wl" x="690.0" y="238.0" width="2.6" height="3.6"/><rect class="wl" x="694.2" y="238.0" width="2.6" height="3.6"/><rect class="wl" x="685.8" y="245.0" width="2.6" height="3.6"/><rect class="wl" x="690.0" y="245.0" width="2.6" height="3.6"/><rect class="wl" x="694.2" y="245.0" width="2.6" height="3.6"/><rect class="wl" x="685.8" y="252.0" width="2.6" height="3.6"/><rect class="wl" x="690.0" y="252.0" width="2.6" height="3.6"/><rect class="wd" x="694.2" y="252.0" width="2.6" height="3.6"/><rect class="wl" x="685.8" y="259.0" width="2.6" height="3.6"/><rect class="wl" x="690.0" y="259.0" width="2.6" height="3.6"/><rect class="wd" x="694.2" y="259.0" width="2.6" height="3.6"/><rect class="wl" x="685.8" y="266.0" width="2.6" height="3.6"/><rect class="wl" x="690.0" y="266.0" width="2.6" height="3.6"/><rect class="wl" x="694.2" y="266.0" width="2.6" height="3.6"/><rect class="wl" x="685.8" y="273.0" width="2.6" height="3.6"/><rect class="wd" x="690.0" y="273.0" width="2.6" height="3.6"/><rect class="wl" x="694.2" y="273.0" width="2.6" height="3.6"/><rect class="wl wf" x="685.8" y="280.0" width="2.6" height="3.6" style="animation-delay:0.3s"/><rect class="wl wf" x="690.0" y="280.0" width="2.6" height="3.6" style="animation-delay:0.8s"/><rect class="wl wf" x="694.2" y="280.0" width="2.6" height="3.6" style="animation-delay:1.9s"/><rect class="wl" x="685.8" y="287.0" width="2.6" height="3.6"/><rect class="wl" x="690.0" y="287.0" width="2.6" height="3.6"/><rect class="wl" x="694.2" y="287.0" width="2.6" height="3.6"/><rect class="wl" x="685.8" y="294.0" width="2.6" height="3.6"/><rect class="wl" x="690.0" y="294.0" width="2.6" height="3.6"/><rect class="wl" x="694.2" y="294.0" width="2.6" height="3.6"/><rect class="wl" x="685.8" y="301.0" width="2.6" height="3.6"/><rect class="wl" x="690.0" y="301.0" width="2.6" height="3.6"/><rect class="wd" x="694.2" y="301.0" width="2.6" height="3.6"/><rect class="wd" x="685.8" y="308.0" width="2.6" height="3.6"/><rect class="wd" x="690.0" y="308.0" width="2.6" height="3.6"/><rect class="wl" x="694.2" y="308.0" width="2.6" height="3.6"/><rect class="wl" x="685.8" y="315.0" width="2.6" height="3.6"/><rect class="wl" x="690.0" y="315.0" width="2.6" height="3.6"/><rect class="wl" x="694.2" y="315.0" width="2.6" height="3.6"/><rect class="wd" x="685.8" y="322.0" width="2.6" height="3.6"/><rect class="wl" x="690.0" y="322.0" width="2.6" height="3.6"/><rect class="wd" x="694.2" y="322.0" width="2.6" height="3.6"/><rect class="wl" x="685.8" y="329.0" width="2.6" height="3.6"/><rect class="wl" x="690.0" y="329.0" width="2.6" height="3.6"/><rect class="wl" x="694.2" y="329.0" width="2.6" height="3.6"/><rect class="wl" x="685.8" y="336.0" width="2.6" height="3.6"/><rect class="wl" x="690.0" y="336.0" width="2.6" height="3.6"/><rect class="wl" x="694.2" y="336.0" width="2.6" height="3.6"/><rect class="wl" x="685.8" y="343.0" width="2.6" height="3.6"/><rect class="wl" x="690.0" y="343.0" width="2.6" height="3.6"/><rect class="wd" x="694.2" y="343.0" width="2.6" height="3.6"/>
+  </g>
+<g class="b" style="animation-delay:560ms">
+    <title>2026-03-01 → 2026-03-07 · 1 commit</title>
+    
+    <rect x="702.3" y="273" width="15" height="77" fill="url(#bldg)"/>
+    <rect x="702.3" y="273" width="1.4" height="77" fill="#00e5ff" opacity="0.3"/>
+    <rect x="702.3" y="270.6" width="15" height="2.4" fill="#00e5ff" filter="url(#glow)"/>
+    <rect class="wl" x="704.7" y="280.0" width="2.6" height="3.6"/><rect class="wl" x="708.9" y="280.0" width="2.6" height="3.6"/><rect class="wl" x="713.1" y="280.0" width="2.6" height="3.6"/><rect class="wd" x="704.7" y="287.0" width="2.6" height="3.6"/><rect class="wd" x="708.9" y="287.0" width="2.6" height="3.6"/><rect class="wl" x="713.1" y="287.0" width="2.6" height="3.6"/><rect class="wl" x="704.7" y="294.0" width="2.6" height="3.6"/><rect class="wd" x="708.9" y="294.0" width="2.6" height="3.6"/><rect class="wd" x="713.1" y="294.0" width="2.6" height="3.6"/><rect class="wd" x="704.7" y="301.0" width="2.6" height="3.6"/><rect class="wd" x="708.9" y="301.0" width="2.6" height="3.6"/><rect class="wd" x="713.1" y="301.0" width="2.6" height="3.6"/><rect class="wl" x="704.7" y="308.0" width="2.6" height="3.6"/><rect class="wd" x="708.9" y="308.0" width="2.6" height="3.6"/><rect class="wl" x="713.1" y="308.0" width="2.6" height="3.6"/><rect class="wd" x="704.7" y="315.0" width="2.6" height="3.6"/><rect class="wl" x="708.9" y="315.0" width="2.6" height="3.6"/><rect class="wd" x="713.1" y="315.0" width="2.6" height="3.6"/><rect class="wd" x="704.7" y="322.0" width="2.6" height="3.6"/><rect class="wl" x="708.9" y="322.0" width="2.6" height="3.6"/><rect class="wd" x="713.1" y="322.0" width="2.6" height="3.6"/><rect class="wd" x="704.7" y="329.0" width="2.6" height="3.6"/><rect class="wd" x="708.9" y="329.0" width="2.6" height="3.6"/><rect class="wl" x="713.1" y="329.0" width="2.6" height="3.6"/><rect class="wd" x="704.7" y="336.0" width="2.6" height="3.6"/><rect class="wl" x="708.9" y="336.0" width="2.6" height="3.6"/><rect class="wd" x="713.1" y="336.0" width="2.6" height="3.6"/><rect class="wl" x="704.7" y="343.0" width="2.6" height="3.6"/><rect class="wl" x="708.9" y="343.0" width="2.6" height="3.6"/><rect class="wl" x="713.1" y="343.0" width="2.6" height="3.6"/>
+  </g>
+<g class="b" style="animation-delay:576ms">
+    <title>2026-03-08 → 2026-03-14 · 0 commits</title>
+    
+    <rect x="721.2" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="721.2" y="340" width="1.4" height="10" fill="#ff3fd8" opacity="0.3"/>
+    <rect x="721.2" y="337.6" width="15" height="2.4" fill="#ff3fd8" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:592ms">
+    <title>2026-03-15 → 2026-03-21 · 0 commits</title>
+    
+    <rect x="740" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="740" y="340" width="1.4" height="10" fill="#9d5cff" opacity="0.3"/>
+    <rect x="740" y="337.6" width="15" height="2.4" fill="#9d5cff" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:608ms">
+    <title>2026-03-22 → 2026-03-28 · 0 commits</title>
+    
+    <rect x="758.9" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="758.9" y="340" width="1.4" height="10" fill="#3cf5c5" opacity="0.3"/>
+    <rect x="758.9" y="337.6" width="15" height="2.4" fill="#3cf5c5" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:624ms">
+    <title>2026-03-29 → 2026-04-04 · 0 commits</title>
+    
+    <rect x="777.8" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="777.8" y="340" width="1.4" height="10" fill="#ffb443" opacity="0.3"/>
+    <rect x="777.8" y="337.6" width="15" height="2.4" fill="#ffb443" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:640ms">
+    <title>2026-04-05 → 2026-04-11 · 0 commits</title>
+    
+    <rect x="796.7" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="796.7" y="340" width="1.4" height="10" fill="#00e5ff" opacity="0.3"/>
+    <rect x="796.7" y="337.6" width="15" height="2.4" fill="#00e5ff" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:656ms">
+    <title>2026-04-12 → 2026-04-18 · 1 commit</title>
+    
+    <rect x="815.5" y="273" width="15" height="77" fill="url(#bldg)"/>
+    <rect x="815.5" y="273" width="1.4" height="77" fill="#ff3fd8" opacity="0.3"/>
+    <rect x="815.5" y="270.6" width="15" height="2.4" fill="#ff3fd8" filter="url(#glow)"/>
+    <rect class="wl" x="817.9" y="280.0" width="2.6" height="3.6"/><rect class="wd" x="822.1" y="280.0" width="2.6" height="3.6"/><rect class="wl" x="826.3" y="280.0" width="2.6" height="3.6"/><rect class="wl" x="817.9" y="287.0" width="2.6" height="3.6"/><rect class="wl" x="822.1" y="287.0" width="2.6" height="3.6"/><rect class="wl" x="826.3" y="287.0" width="2.6" height="3.6"/><rect class="wd" x="817.9" y="294.0" width="2.6" height="3.6"/><rect class="wd" x="822.1" y="294.0" width="2.6" height="3.6"/><rect class="wd" x="826.3" y="294.0" width="2.6" height="3.6"/><rect class="wd" x="817.9" y="301.0" width="2.6" height="3.6"/><rect class="wd" x="822.1" y="301.0" width="2.6" height="3.6"/><rect class="wd" x="826.3" y="301.0" width="2.6" height="3.6"/><rect class="wd" x="817.9" y="308.0" width="2.6" height="3.6"/><rect class="wd" x="822.1" y="308.0" width="2.6" height="3.6"/><rect class="wl" x="826.3" y="308.0" width="2.6" height="3.6"/><rect class="wl" x="817.9" y="315.0" width="2.6" height="3.6"/><rect class="wd" x="822.1" y="315.0" width="2.6" height="3.6"/><rect class="wl" x="826.3" y="315.0" width="2.6" height="3.6"/><rect class="wd" x="817.9" y="322.0" width="2.6" height="3.6"/><rect class="wl" x="822.1" y="322.0" width="2.6" height="3.6"/><rect class="wl" x="826.3" y="322.0" width="2.6" height="3.6"/><rect class="wd" x="817.9" y="329.0" width="2.6" height="3.6"/><rect class="wd" x="822.1" y="329.0" width="2.6" height="3.6"/><rect class="wd" x="826.3" y="329.0" width="2.6" height="3.6"/><rect class="wd" x="817.9" y="336.0" width="2.6" height="3.6"/><rect class="wd" x="822.1" y="336.0" width="2.6" height="3.6"/><rect class="wl" x="826.3" y="336.0" width="2.6" height="3.6"/><rect class="wl" x="817.9" y="343.0" width="2.6" height="3.6"/><rect class="wd" x="822.1" y="343.0" width="2.6" height="3.6"/><rect class="wl" x="826.3" y="343.0" width="2.6" height="3.6"/>
+  </g>
+<g class="b" style="animation-delay:672ms">
+    <title>2026-04-19 → 2026-04-25 · 2 commits</title>
+    
+    <rect x="834.4" y="230" width="15" height="120" fill="url(#bldg)"/>
+    <rect x="834.4" y="230" width="1.4" height="120" fill="#9d5cff" opacity="0.3"/>
+    <rect x="834.4" y="227.6" width="15" height="2.4" fill="#9d5cff" filter="url(#glow)"/>
+    <rect class="wl" x="836.8" y="237.0" width="2.6" height="3.6"/><rect class="wd" x="841.0" y="237.0" width="2.6" height="3.6"/><rect class="wl wf" x="845.2" y="237.0" width="2.6" height="3.6" style="animation-delay:0.9s"/><rect class="wl" x="836.8" y="244.0" width="2.6" height="3.6"/><rect class="wl" x="841.0" y="244.0" width="2.6" height="3.6"/><rect class="wd" x="845.2" y="244.0" width="2.6" height="3.6"/><rect class="wd" x="836.8" y="251.0" width="2.6" height="3.6"/><rect class="wd" x="841.0" y="251.0" width="2.6" height="3.6"/><rect class="wl" x="845.2" y="251.0" width="2.6" height="3.6"/><rect class="wl" x="836.8" y="258.0" width="2.6" height="3.6"/><rect class="wl" x="841.0" y="258.0" width="2.6" height="3.6"/><rect class="wd" x="845.2" y="258.0" width="2.6" height="3.6"/><rect class="wl" x="836.8" y="265.0" width="2.6" height="3.6"/><rect class="wd" x="841.0" y="265.0" width="2.6" height="3.6"/><rect class="wl" x="845.2" y="265.0" width="2.6" height="3.6"/><rect class="wl wf" x="836.8" y="272.0" width="2.6" height="3.6" style="animation-delay:2.8s"/><rect class="wd" x="841.0" y="272.0" width="2.6" height="3.6"/><rect class="wd" x="845.2" y="272.0" width="2.6" height="3.6"/><rect class="wd" x="836.8" y="279.0" width="2.6" height="3.6"/><rect class="wl" x="841.0" y="279.0" width="2.6" height="3.6"/><rect class="wd" x="845.2" y="279.0" width="2.6" height="3.6"/><rect class="wl" x="836.8" y="286.0" width="2.6" height="3.6"/><rect class="wd" x="841.0" y="286.0" width="2.6" height="3.6"/><rect class="wl" x="845.2" y="286.0" width="2.6" height="3.6"/><rect class="wd" x="836.8" y="293.0" width="2.6" height="3.6"/><rect class="wd" x="841.0" y="293.0" width="2.6" height="3.6"/><rect class="wl" x="845.2" y="293.0" width="2.6" height="3.6"/><rect class="wl wf" x="836.8" y="300.0" width="2.6" height="3.6" style="animation-delay:0.5s"/><rect class="wl" x="841.0" y="300.0" width="2.6" height="3.6"/><rect class="wd" x="845.2" y="300.0" width="2.6" height="3.6"/><rect class="wl" x="836.8" y="307.0" width="2.6" height="3.6"/><rect class="wd" x="841.0" y="307.0" width="2.6" height="3.6"/><rect class="wd" x="845.2" y="307.0" width="2.6" height="3.6"/><rect class="wl" x="836.8" y="314.0" width="2.6" height="3.6"/><rect class="wl" x="841.0" y="314.0" width="2.6" height="3.6"/><rect class="wl" x="845.2" y="314.0" width="2.6" height="3.6"/><rect class="wd" x="836.8" y="321.0" width="2.6" height="3.6"/><rect class="wl" x="841.0" y="321.0" width="2.6" height="3.6"/><rect class="wd" x="845.2" y="321.0" width="2.6" height="3.6"/><rect class="wl" x="836.8" y="328.0" width="2.6" height="3.6"/><rect class="wl" x="841.0" y="328.0" width="2.6" height="3.6"/><rect class="wd" x="845.2" y="328.0" width="2.6" height="3.6"/><rect class="wl" x="836.8" y="335.0" width="2.6" height="3.6"/><rect class="wd" x="841.0" y="335.0" width="2.6" height="3.6"/><rect class="wl" x="845.2" y="335.0" width="2.6" height="3.6"/><rect class="wl" x="836.8" y="342.0" width="2.6" height="3.6"/><rect class="wd" x="841.0" y="342.0" width="2.6" height="3.6"/><rect class="wl" x="845.2" y="342.0" width="2.6" height="3.6"/>
+  </g>
+<g class="b" style="animation-delay:688ms">
+    <title>2026-04-26 → 2026-05-02 · 0 commits</title>
+    
+    <rect x="853.3" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="853.3" y="340" width="1.4" height="10" fill="#3cf5c5" opacity="0.3"/>
+    <rect x="853.3" y="337.6" width="15" height="2.4" fill="#3cf5c5" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:704ms">
+    <title>2026-05-03 → 2026-05-09 · 2 commits</title>
+    
+    <rect x="872.1" y="230" width="15" height="120" fill="url(#bldg)"/>
+    <rect x="872.1" y="230" width="1.4" height="120" fill="#ffb443" opacity="0.3"/>
+    <rect x="872.1" y="227.6" width="15" height="2.4" fill="#ffb443" filter="url(#glow)"/>
+    <rect class="wl" x="874.5" y="237.0" width="2.6" height="3.6"/><rect class="wl" x="878.7" y="237.0" width="2.6" height="3.6"/><rect class="wl" x="882.9" y="237.0" width="2.6" height="3.6"/><rect class="wd" x="874.5" y="244.0" width="2.6" height="3.6"/><rect class="wl" x="878.7" y="244.0" width="2.6" height="3.6"/><rect class="wd" x="882.9" y="244.0" width="2.6" height="3.6"/><rect class="wd" x="874.5" y="251.0" width="2.6" height="3.6"/><rect class="wd" x="878.7" y="251.0" width="2.6" height="3.6"/><rect class="wl" x="882.9" y="251.0" width="2.6" height="3.6"/><rect class="wd" x="874.5" y="258.0" width="2.6" height="3.6"/><rect class="wl" x="878.7" y="258.0" width="2.6" height="3.6"/><rect class="wl" x="882.9" y="258.0" width="2.6" height="3.6"/><rect class="wd" x="874.5" y="265.0" width="2.6" height="3.6"/><rect class="wl" x="878.7" y="265.0" width="2.6" height="3.6"/><rect class="wl wf" x="882.9" y="265.0" width="2.6" height="3.6" style="animation-delay:3.1s"/><rect class="wd" x="874.5" y="272.0" width="2.6" height="3.6"/><rect class="wl" x="878.7" y="272.0" width="2.6" height="3.6"/><rect class="wl" x="882.9" y="272.0" width="2.6" height="3.6"/><rect class="wd" x="874.5" y="279.0" width="2.6" height="3.6"/><rect class="wl wf" x="878.7" y="279.0" width="2.6" height="3.6" style="animation-delay:1.1s"/><rect class="wd" x="882.9" y="279.0" width="2.6" height="3.6"/><rect class="wl" x="874.5" y="286.0" width="2.6" height="3.6"/><rect class="wl" x="878.7" y="286.0" width="2.6" height="3.6"/><rect class="wd" x="882.9" y="286.0" width="2.6" height="3.6"/><rect class="wd" x="874.5" y="293.0" width="2.6" height="3.6"/><rect class="wd" x="878.7" y="293.0" width="2.6" height="3.6"/><rect class="wl" x="882.9" y="293.0" width="2.6" height="3.6"/><rect class="wd" x="874.5" y="300.0" width="2.6" height="3.6"/><rect class="wl" x="878.7" y="300.0" width="2.6" height="3.6"/><rect class="wl" x="882.9" y="300.0" width="2.6" height="3.6"/><rect class="wl" x="874.5" y="307.0" width="2.6" height="3.6"/><rect class="wl" x="878.7" y="307.0" width="2.6" height="3.6"/><rect class="wd" x="882.9" y="307.0" width="2.6" height="3.6"/><rect class="wl" x="874.5" y="314.0" width="2.6" height="3.6"/><rect class="wl" x="878.7" y="314.0" width="2.6" height="3.6"/><rect class="wl" x="882.9" y="314.0" width="2.6" height="3.6"/><rect class="wd" x="874.5" y="321.0" width="2.6" height="3.6"/><rect class="wd" x="878.7" y="321.0" width="2.6" height="3.6"/><rect class="wl" x="882.9" y="321.0" width="2.6" height="3.6"/><rect class="wl" x="874.5" y="328.0" width="2.6" height="3.6"/><rect class="wd" x="878.7" y="328.0" width="2.6" height="3.6"/><rect class="wd" x="882.9" y="328.0" width="2.6" height="3.6"/><rect class="wl" x="874.5" y="335.0" width="2.6" height="3.6"/><rect class="wl" x="878.7" y="335.0" width="2.6" height="3.6"/><rect class="wd" x="882.9" y="335.0" width="2.6" height="3.6"/><rect class="wl" x="874.5" y="342.0" width="2.6" height="3.6"/><rect class="wd" x="878.7" y="342.0" width="2.6" height="3.6"/><rect class="wl" x="882.9" y="342.0" width="2.6" height="3.6"/>
+  </g>
+<g class="b" style="animation-delay:720ms">
+    <title>2026-05-10 → 2026-05-16 · 0 commits</title>
+    
+    <rect x="891" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="891" y="340" width="1.4" height="10" fill="#00e5ff" opacity="0.3"/>
+    <rect x="891" y="337.6" width="15" height="2.4" fill="#00e5ff" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:736ms">
+    <title>2026-05-17 → 2026-05-23 · 3 commits</title>
+    <line x1="917.4" y1="181" x2="917.4" y2="194" stroke="#3a3a5e" stroke-width="1.2"/>
+      <circle class="beacon" cx="917.4" cy="180" r="1.8" fill="#ff3355" style="animation-delay:1.9s"/>
+    <rect x="909.9" y="194" width="15" height="156" fill="url(#bldg)"/>
+    <rect x="909.9" y="194" width="1.4" height="156" fill="#ff3fd8" opacity="0.3"/>
+    <rect x="909.9" y="191.6" width="15" height="2.4" fill="#ff3fd8" filter="url(#glow)"/>
+    <rect class="wd" x="912.3" y="201.0" width="2.6" height="3.6"/><rect class="wl" x="916.5" y="201.0" width="2.6" height="3.6"/><rect class="wl" x="920.7" y="201.0" width="2.6" height="3.6"/><rect class="wl" x="912.3" y="208.0" width="2.6" height="3.6"/><rect class="wl" x="916.5" y="208.0" width="2.6" height="3.6"/><rect class="wl" x="920.7" y="208.0" width="2.6" height="3.6"/><rect class="wd" x="912.3" y="215.0" width="2.6" height="3.6"/><rect class="wl" x="916.5" y="215.0" width="2.6" height="3.6"/><rect class="wl" x="920.7" y="215.0" width="2.6" height="3.6"/><rect class="wd" x="912.3" y="222.0" width="2.6" height="3.6"/><rect class="wl" x="916.5" y="222.0" width="2.6" height="3.6"/><rect class="wd" x="920.7" y="222.0" width="2.6" height="3.6"/><rect class="wl" x="912.3" y="229.0" width="2.6" height="3.6"/><rect class="wl" x="916.5" y="229.0" width="2.6" height="3.6"/><rect class="wl" x="920.7" y="229.0" width="2.6" height="3.6"/><rect class="wl wf" x="912.3" y="236.0" width="2.6" height="3.6" style="animation-delay:2.5s"/><rect class="wl" x="916.5" y="236.0" width="2.6" height="3.6"/><rect class="wl" x="920.7" y="236.0" width="2.6" height="3.6"/><rect class="wl wf" x="912.3" y="243.0" width="2.6" height="3.6" style="animation-delay:0.8s"/><rect class="wl" x="916.5" y="243.0" width="2.6" height="3.6"/><rect class="wl" x="920.7" y="243.0" width="2.6" height="3.6"/><rect class="wl" x="912.3" y="250.0" width="2.6" height="3.6"/><rect class="wd" x="916.5" y="250.0" width="2.6" height="3.6"/><rect class="wl" x="920.7" y="250.0" width="2.6" height="3.6"/><rect class="wl" x="912.3" y="257.0" width="2.6" height="3.6"/><rect class="wd" x="916.5" y="257.0" width="2.6" height="3.6"/><rect class="wd" x="920.7" y="257.0" width="2.6" height="3.6"/><rect class="wd" x="912.3" y="264.0" width="2.6" height="3.6"/><rect class="wd" x="916.5" y="264.0" width="2.6" height="3.6"/><rect class="wd" x="920.7" y="264.0" width="2.6" height="3.6"/><rect class="wd" x="912.3" y="271.0" width="2.6" height="3.6"/><rect class="wl" x="916.5" y="271.0" width="2.6" height="3.6"/><rect class="wd" x="920.7" y="271.0" width="2.6" height="3.6"/><rect class="wd" x="912.3" y="278.0" width="2.6" height="3.6"/><rect class="wl" x="916.5" y="278.0" width="2.6" height="3.6"/><rect class="wl wf" x="920.7" y="278.0" width="2.6" height="3.6" style="animation-delay:4.3s"/><rect class="wl" x="912.3" y="285.0" width="2.6" height="3.6"/><rect class="wd" x="916.5" y="285.0" width="2.6" height="3.6"/><rect class="wl wf" x="920.7" y="285.0" width="2.6" height="3.6" style="animation-delay:1.1s"/><rect class="wd" x="912.3" y="292.0" width="2.6" height="3.6"/><rect class="wl" x="916.5" y="292.0" width="2.6" height="3.6"/><rect class="wd" x="920.7" y="292.0" width="2.6" height="3.6"/><rect class="wl" x="912.3" y="299.0" width="2.6" height="3.6"/><rect class="wl" x="916.5" y="299.0" width="2.6" height="3.6"/><rect class="wd" x="920.7" y="299.0" width="2.6" height="3.6"/><rect class="wl wf" x="912.3" y="306.0" width="2.6" height="3.6" style="animation-delay:0.6s"/><rect class="wd" x="916.5" y="306.0" width="2.6" height="3.6"/><rect class="wl" x="920.7" y="306.0" width="2.6" height="3.6"/><rect class="wl" x="912.3" y="313.0" width="2.6" height="3.6"/><rect class="wl" x="916.5" y="313.0" width="2.6" height="3.6"/><rect class="wl" x="920.7" y="313.0" width="2.6" height="3.6"/><rect class="wd" x="912.3" y="320.0" width="2.6" height="3.6"/><rect class="wd" x="916.5" y="320.0" width="2.6" height="3.6"/><rect class="wl" x="920.7" y="320.0" width="2.6" height="3.6"/><rect class="wl" x="912.3" y="327.0" width="2.6" height="3.6"/><rect class="wl" x="916.5" y="327.0" width="2.6" height="3.6"/><rect class="wl" x="920.7" y="327.0" width="2.6" height="3.6"/><rect class="wl" x="912.3" y="334.0" width="2.6" height="3.6"/><rect class="wd" x="916.5" y="334.0" width="2.6" height="3.6"/><rect class="wl wf" x="920.7" y="334.0" width="2.6" height="3.6" style="animation-delay:3.1s"/><rect class="wd" x="912.3" y="341.0" width="2.6" height="3.6"/><rect class="wl" x="916.5" y="341.0" width="2.6" height="3.6"/><rect class="wl" x="920.7" y="341.0" width="2.6" height="3.6"/>
+  </g>
+<g class="b" style="animation-delay:752ms">
+    <title>2026-05-24 → 2026-05-30 · 5 commits</title>
+    <line x1="936.2" y1="119" x2="936.2" y2="132" stroke="#3a3a5e" stroke-width="1.2"/>
+      <circle class="beacon" cx="936.2" cy="118" r="1.8" fill="#ff3355" style="animation-delay:0.1s"/>
+    <rect x="928.7" y="132" width="15" height="218" fill="url(#bldg)"/>
+    <rect x="928.7" y="132" width="1.4" height="218" fill="#9d5cff" opacity="0.3"/>
+    <rect x="928.7" y="129.6" width="15" height="2.4" fill="#9d5cff" filter="url(#glow)"/>
+    <rect class="wd" x="931.1" y="139.0" width="2.6" height="3.6"/><rect class="wl" x="935.3" y="139.0" width="2.6" height="3.6"/><rect class="wl" x="939.5" y="139.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="146.0" width="2.6" height="3.6"/><rect class="wl" x="935.3" y="146.0" width="2.6" height="3.6"/><rect class="wl wf" x="939.5" y="146.0" width="2.6" height="3.6" style="animation-delay:4.0s"/><rect class="wl" x="931.1" y="153.0" width="2.6" height="3.6"/><rect class="wl" x="935.3" y="153.0" width="2.6" height="3.6"/><rect class="wl" x="939.5" y="153.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="160.0" width="2.6" height="3.6"/><rect class="wl wf" x="935.3" y="160.0" width="2.6" height="3.6" style="animation-delay:2.1s"/><rect class="wd" x="939.5" y="160.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="167.0" width="2.6" height="3.6"/><rect class="wl wf" x="935.3" y="167.0" width="2.6" height="3.6" style="animation-delay:2.2s"/><rect class="wl" x="939.5" y="167.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="174.0" width="2.6" height="3.6"/><rect class="wl" x="935.3" y="174.0" width="2.6" height="3.6"/><rect class="wd" x="939.5" y="174.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="181.0" width="2.6" height="3.6"/><rect class="wl" x="935.3" y="181.0" width="2.6" height="3.6"/><rect class="wl" x="939.5" y="181.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="188.0" width="2.6" height="3.6"/><rect class="wd" x="935.3" y="188.0" width="2.6" height="3.6"/><rect class="wl" x="939.5" y="188.0" width="2.6" height="3.6"/><rect class="wl wf" x="931.1" y="195.0" width="2.6" height="3.6" style="animation-delay:0.6s"/><rect class="wd" x="935.3" y="195.0" width="2.6" height="3.6"/><rect class="wl" x="939.5" y="195.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="202.0" width="2.6" height="3.6"/><rect class="wd" x="935.3" y="202.0" width="2.6" height="3.6"/><rect class="wl" x="939.5" y="202.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="209.0" width="2.6" height="3.6"/><rect class="wd" x="935.3" y="209.0" width="2.6" height="3.6"/><rect class="wl wf" x="939.5" y="209.0" width="2.6" height="3.6" style="animation-delay:3.7s"/><rect class="wl" x="931.1" y="216.0" width="2.6" height="3.6"/><rect class="wl" x="935.3" y="216.0" width="2.6" height="3.6"/><rect class="wl" x="939.5" y="216.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="223.0" width="2.6" height="3.6"/><rect class="wl" x="935.3" y="223.0" width="2.6" height="3.6"/><rect class="wl" x="939.5" y="223.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="230.0" width="2.6" height="3.6"/><rect class="wl" x="935.3" y="230.0" width="2.6" height="3.6"/><rect class="wl" x="939.5" y="230.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="237.0" width="2.6" height="3.6"/><rect class="wl" x="935.3" y="237.0" width="2.6" height="3.6"/><rect class="wl" x="939.5" y="237.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="244.0" width="2.6" height="3.6"/><rect class="wl" x="935.3" y="244.0" width="2.6" height="3.6"/><rect class="wl" x="939.5" y="244.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="251.0" width="2.6" height="3.6"/><rect class="wl wf" x="935.3" y="251.0" width="2.6" height="3.6" style="animation-delay:0.1s"/><rect class="wl" x="939.5" y="251.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="258.0" width="2.6" height="3.6"/><rect class="wl" x="935.3" y="258.0" width="2.6" height="3.6"/><rect class="wl" x="939.5" y="258.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="265.0" width="2.6" height="3.6"/><rect class="wl" x="935.3" y="265.0" width="2.6" height="3.6"/><rect class="wl" x="939.5" y="265.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="272.0" width="2.6" height="3.6"/><rect class="wl" x="935.3" y="272.0" width="2.6" height="3.6"/><rect class="wl" x="939.5" y="272.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="279.0" width="2.6" height="3.6"/><rect class="wl" x="935.3" y="279.0" width="2.6" height="3.6"/><rect class="wl" x="939.5" y="279.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="286.0" width="2.6" height="3.6"/><rect class="wl" x="935.3" y="286.0" width="2.6" height="3.6"/><rect class="wl" x="939.5" y="286.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="293.0" width="2.6" height="3.6"/><rect class="wl" x="935.3" y="293.0" width="2.6" height="3.6"/><rect class="wl" x="939.5" y="293.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="300.0" width="2.6" height="3.6"/><rect class="wl" x="935.3" y="300.0" width="2.6" height="3.6"/><rect class="wl" x="939.5" y="300.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="307.0" width="2.6" height="3.6"/><rect class="wl" x="935.3" y="307.0" width="2.6" height="3.6"/><rect class="wl" x="939.5" y="307.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="314.0" width="2.6" height="3.6"/><rect class="wl" x="935.3" y="314.0" width="2.6" height="3.6"/><rect class="wl" x="939.5" y="314.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="321.0" width="2.6" height="3.6"/><rect class="wl wf" x="935.3" y="321.0" width="2.6" height="3.6" style="animation-delay:3.8s"/><rect class="wl" x="939.5" y="321.0" width="2.6" height="3.6"/><rect class="wl wf" x="931.1" y="328.0" width="2.6" height="3.6" style="animation-delay:4.0s"/><rect class="wl wf" x="935.3" y="328.0" width="2.6" height="3.6" style="animation-delay:4.2s"/><rect class="wl wf" x="939.5" y="328.0" width="2.6" height="3.6" style="animation-delay:4.8s"/><rect class="wd" x="931.1" y="335.0" width="2.6" height="3.6"/><rect class="wl" x="935.3" y="335.0" width="2.6" height="3.6"/><rect class="wl" x="939.5" y="335.0" width="2.6" height="3.6"/><rect class="wl" x="931.1" y="342.0" width="2.6" height="3.6"/><rect class="wl" x="935.3" y="342.0" width="2.6" height="3.6"/><rect class="wd" x="939.5" y="342.0" width="2.6" height="3.6"/>
+  </g>
+<g class="b" style="animation-delay:768ms">
+    <title>2026-05-31 → 2026-06-06 · 3 commits</title>
+    <line x1="955.1" y1="181" x2="955.1" y2="194" stroke="#3a3a5e" stroke-width="1.2"/>
+      <circle class="beacon" cx="955.1" cy="180" r="1.8" fill="#ff3355" style="animation-delay:0.3s"/>
+    <rect x="947.6" y="194" width="15" height="156" fill="url(#bldg)"/>
+    <rect x="947.6" y="194" width="1.4" height="156" fill="#3cf5c5" opacity="0.3"/>
+    <rect x="947.6" y="191.6" width="15" height="2.4" fill="#3cf5c5" filter="url(#glow)"/>
+    <rect class="wl wf" x="950.0" y="201.0" width="2.6" height="3.6" style="animation-delay:2.8s"/><rect class="wl" x="954.2" y="201.0" width="2.6" height="3.6"/><rect class="wd" x="958.4" y="201.0" width="2.6" height="3.6"/><rect class="wl" x="950.0" y="208.0" width="2.6" height="3.6"/><rect class="wl" x="954.2" y="208.0" width="2.6" height="3.6"/><rect class="wd" x="958.4" y="208.0" width="2.6" height="3.6"/><rect class="wl" x="950.0" y="215.0" width="2.6" height="3.6"/><rect class="wd" x="954.2" y="215.0" width="2.6" height="3.6"/><rect class="wd" x="958.4" y="215.0" width="2.6" height="3.6"/><rect class="wd" x="950.0" y="222.0" width="2.6" height="3.6"/><rect class="wd" x="954.2" y="222.0" width="2.6" height="3.6"/><rect class="wl wf" x="958.4" y="222.0" width="2.6" height="3.6" style="animation-delay:4.5s"/><rect class="wl" x="950.0" y="229.0" width="2.6" height="3.6"/><rect class="wl" x="954.2" y="229.0" width="2.6" height="3.6"/><rect class="wl" x="958.4" y="229.0" width="2.6" height="3.6"/><rect class="wl" x="950.0" y="236.0" width="2.6" height="3.6"/><rect class="wl wf" x="954.2" y="236.0" width="2.6" height="3.6" style="animation-delay:2.7s"/><rect class="wl" x="958.4" y="236.0" width="2.6" height="3.6"/><rect class="wl" x="950.0" y="243.0" width="2.6" height="3.6"/><rect class="wl" x="954.2" y="243.0" width="2.6" height="3.6"/><rect class="wd" x="958.4" y="243.0" width="2.6" height="3.6"/><rect class="wd" x="950.0" y="250.0" width="2.6" height="3.6"/><rect class="wd" x="954.2" y="250.0" width="2.6" height="3.6"/><rect class="wd" x="958.4" y="250.0" width="2.6" height="3.6"/><rect class="wl" x="950.0" y="257.0" width="2.6" height="3.6"/><rect class="wd" x="954.2" y="257.0" width="2.6" height="3.6"/><rect class="wl" x="958.4" y="257.0" width="2.6" height="3.6"/><rect class="wl" x="950.0" y="264.0" width="2.6" height="3.6"/><rect class="wl" x="954.2" y="264.0" width="2.6" height="3.6"/><rect class="wl" x="958.4" y="264.0" width="2.6" height="3.6"/><rect class="wl" x="950.0" y="271.0" width="2.6" height="3.6"/><rect class="wd" x="954.2" y="271.0" width="2.6" height="3.6"/><rect class="wd" x="958.4" y="271.0" width="2.6" height="3.6"/><rect class="wd" x="950.0" y="278.0" width="2.6" height="3.6"/><rect class="wl" x="954.2" y="278.0" width="2.6" height="3.6"/><rect class="wl" x="958.4" y="278.0" width="2.6" height="3.6"/><rect class="wl" x="950.0" y="285.0" width="2.6" height="3.6"/><rect class="wd" x="954.2" y="285.0" width="2.6" height="3.6"/><rect class="wl" x="958.4" y="285.0" width="2.6" height="3.6"/><rect class="wd" x="950.0" y="292.0" width="2.6" height="3.6"/><rect class="wl" x="954.2" y="292.0" width="2.6" height="3.6"/><rect class="wl" x="958.4" y="292.0" width="2.6" height="3.6"/><rect class="wl" x="950.0" y="299.0" width="2.6" height="3.6"/><rect class="wl" x="954.2" y="299.0" width="2.6" height="3.6"/><rect class="wl" x="958.4" y="299.0" width="2.6" height="3.6"/><rect class="wl" x="950.0" y="306.0" width="2.6" height="3.6"/><rect class="wl" x="954.2" y="306.0" width="2.6" height="3.6"/><rect class="wl" x="958.4" y="306.0" width="2.6" height="3.6"/><rect class="wd" x="950.0" y="313.0" width="2.6" height="3.6"/><rect class="wl" x="954.2" y="313.0" width="2.6" height="3.6"/><rect class="wd" x="958.4" y="313.0" width="2.6" height="3.6"/><rect class="wl" x="950.0" y="320.0" width="2.6" height="3.6"/><rect class="wl" x="954.2" y="320.0" width="2.6" height="3.6"/><rect class="wl" x="958.4" y="320.0" width="2.6" height="3.6"/><rect class="wd" x="950.0" y="327.0" width="2.6" height="3.6"/><rect class="wl" x="954.2" y="327.0" width="2.6" height="3.6"/><rect class="wd" x="958.4" y="327.0" width="2.6" height="3.6"/><rect class="wl" x="950.0" y="334.0" width="2.6" height="3.6"/><rect class="wd" x="954.2" y="334.0" width="2.6" height="3.6"/><rect class="wl" x="958.4" y="334.0" width="2.6" height="3.6"/><rect class="wl" x="950.0" y="341.0" width="2.6" height="3.6"/><rect class="wd" x="954.2" y="341.0" width="2.6" height="3.6"/><rect class="wd" x="958.4" y="341.0" width="2.6" height="3.6"/>
+  </g>
+<g class="b" style="animation-delay:784ms">
+    <title>2026-06-07 → 2026-06-13 · 0 commits</title>
+    
+    <rect x="966.5" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="966.5" y="340" width="1.4" height="10" fill="#ffb443" opacity="0.3"/>
+    <rect x="966.5" y="337.6" width="15" height="2.4" fill="#ffb443" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:800ms">
+    <title>2026-06-14 → 2026-06-20 · 0 commits</title>
+    
+    <rect x="985.3" y="340" width="15" height="10" fill="url(#bldg)"/>
+    <rect x="985.3" y="340" width="1.4" height="10" fill="#00e5ff" opacity="0.3"/>
+    <rect x="985.3" y="337.6" width="15" height="2.4" fill="#00e5ff" filter="url(#glow)"/>
+    
+  </g>
+<g class="b" style="animation-delay:816ms">
+    <title>2026-06-21 → 2026-06-27 · 2 commits</title>
+    
+    <rect x="1004.2" y="230" width="15" height="120" fill="url(#bldg)"/>
+    <rect x="1004.2" y="230" width="1.4" height="120" fill="#ff3fd8" opacity="0.3"/>
+    <rect x="1004.2" y="227.6" width="15" height="2.4" fill="#ff3fd8" filter="url(#glow)"/>
+    <rect class="wl" x="1006.6" y="237.0" width="2.6" height="3.6"/><rect class="wd" x="1010.8" y="237.0" width="2.6" height="3.6"/><rect class="wd" x="1015.0" y="237.0" width="2.6" height="3.6"/><rect class="wl" x="1006.6" y="244.0" width="2.6" height="3.6"/><rect class="wl" x="1010.8" y="244.0" width="2.6" height="3.6"/><rect class="wd" x="1015.0" y="244.0" width="2.6" height="3.6"/><rect class="wd" x="1006.6" y="251.0" width="2.6" height="3.6"/><rect class="wl" x="1010.8" y="251.0" width="2.6" height="3.6"/><rect class="wd" x="1015.0" y="251.0" width="2.6" height="3.6"/><rect class="wl" x="1006.6" y="258.0" width="2.6" height="3.6"/><rect class="wl" x="1010.8" y="258.0" width="2.6" height="3.6"/><rect class="wd" x="1015.0" y="258.0" width="2.6" height="3.6"/><rect class="wl" x="1006.6" y="265.0" width="2.6" height="3.6"/><rect class="wd" x="1010.8" y="265.0" width="2.6" height="3.6"/><rect class="wd" x="1015.0" y="265.0" width="2.6" height="3.6"/><rect class="wl" x="1006.6" y="272.0" width="2.6" height="3.6"/><rect class="wl" x="1010.8" y="272.0" width="2.6" height="3.6"/><rect class="wl" x="1015.0" y="272.0" width="2.6" height="3.6"/><rect class="wl" x="1006.6" y="279.0" width="2.6" height="3.6"/><rect class="wl" x="1010.8" y="279.0" width="2.6" height="3.6"/><rect class="wl" x="1015.0" y="279.0" width="2.6" height="3.6"/><rect class="wl" x="1006.6" y="286.0" width="2.6" height="3.6"/><rect class="wd" x="1010.8" y="286.0" width="2.6" height="3.6"/><rect class="wl" x="1015.0" y="286.0" width="2.6" height="3.6"/><rect class="wd" x="1006.6" y="293.0" width="2.6" height="3.6"/><rect class="wd" x="1010.8" y="293.0" width="2.6" height="3.6"/><rect class="wl wf" x="1015.0" y="293.0" width="2.6" height="3.6" style="animation-delay:3.3s"/><rect class="wl" x="1006.6" y="300.0" width="2.6" height="3.6"/><rect class="wl" x="1010.8" y="300.0" width="2.6" height="3.6"/><rect class="wd" x="1015.0" y="300.0" width="2.6" height="3.6"/><rect class="wd" x="1006.6" y="307.0" width="2.6" height="3.6"/><rect class="wd" x="1010.8" y="307.0" width="2.6" height="3.6"/><rect class="wd" x="1015.0" y="307.0" width="2.6" height="3.6"/><rect class="wl" x="1006.6" y="314.0" width="2.6" height="3.6"/><rect class="wl" x="1010.8" y="314.0" width="2.6" height="3.6"/><rect class="wl" x="1015.0" y="314.0" width="2.6" height="3.6"/><rect class="wd" x="1006.6" y="321.0" width="2.6" height="3.6"/><rect class="wd" x="1010.8" y="321.0" width="2.6" height="3.6"/><rect class="wl" x="1015.0" y="321.0" width="2.6" height="3.6"/><rect class="wd" x="1006.6" y="328.0" width="2.6" height="3.6"/><rect class="wl" x="1010.8" y="328.0" width="2.6" height="3.6"/><rect class="wl" x="1015.0" y="328.0" width="2.6" height="3.6"/><rect class="wl" x="1006.6" y="335.0" width="2.6" height="3.6"/><rect class="wd" x="1010.8" y="335.0" width="2.6" height="3.6"/><rect class="wl" x="1015.0" y="335.0" width="2.6" height="3.6"/><rect class="wd" x="1006.6" y="342.0" width="2.6" height="3.6"/><rect class="wd" x="1010.8" y="342.0" width="2.6" height="3.6"/><rect class="wl" x="1015.0" y="342.0" width="2.6" height="3.6"/>
+  </g>
+<g class="b" style="animation-delay:832ms">
+    <title>2026-06-28 → 2026-07-02 · 4 commits</title>
+    <line x1="1030.6" y1="148" x2="1030.6" y2="161" stroke="#3a3a5e" stroke-width="1.2"/>
+      <circle class="beacon" cx="1030.6" cy="147" r="1.8" fill="#ff3355" style="animation-delay:0.8s"/>
+    <rect x="1023.1" y="161" width="15" height="189" fill="url(#bldg)"/>
+    <rect x="1023.1" y="161" width="1.4" height="189" fill="#9d5cff" opacity="0.3"/>
+    <rect x="1023.1" y="158.6" width="15" height="2.4" fill="#9d5cff" filter="url(#glow)"/>
+    <rect class="wl" x="1025.5" y="168.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="168.0" width="2.6" height="3.6"/><rect class="wl" x="1033.9" y="168.0" width="2.6" height="3.6"/><rect class="wl" x="1025.5" y="175.0" width="2.6" height="3.6"/><rect class="wl wf" x="1029.7" y="175.0" width="2.6" height="3.6" style="animation-delay:3.5s"/><rect class="wd" x="1033.9" y="175.0" width="2.6" height="3.6"/><rect class="wl" x="1025.5" y="182.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="182.0" width="2.6" height="3.6"/><rect class="wl wf" x="1033.9" y="182.0" width="2.6" height="3.6" style="animation-delay:4.2s"/><rect class="wl" x="1025.5" y="189.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="189.0" width="2.6" height="3.6"/><rect class="wl" x="1033.9" y="189.0" width="2.6" height="3.6"/><rect class="wl" x="1025.5" y="196.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="196.0" width="2.6" height="3.6"/><rect class="wl" x="1033.9" y="196.0" width="2.6" height="3.6"/><rect class="wl" x="1025.5" y="203.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="203.0" width="2.6" height="3.6"/><rect class="wl" x="1033.9" y="203.0" width="2.6" height="3.6"/><rect class="wd" x="1025.5" y="210.0" width="2.6" height="3.6"/><rect class="wd" x="1029.7" y="210.0" width="2.6" height="3.6"/><rect class="wl" x="1033.9" y="210.0" width="2.6" height="3.6"/><rect class="wl" x="1025.5" y="217.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="217.0" width="2.6" height="3.6"/><rect class="wd" x="1033.9" y="217.0" width="2.6" height="3.6"/><rect class="wd" x="1025.5" y="224.0" width="2.6" height="3.6"/><rect class="wd" x="1029.7" y="224.0" width="2.6" height="3.6"/><rect class="wl" x="1033.9" y="224.0" width="2.6" height="3.6"/><rect class="wd" x="1025.5" y="231.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="231.0" width="2.6" height="3.6"/><rect class="wl" x="1033.9" y="231.0" width="2.6" height="3.6"/><rect class="wl" x="1025.5" y="238.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="238.0" width="2.6" height="3.6"/><rect class="wl" x="1033.9" y="238.0" width="2.6" height="3.6"/><rect class="wd" x="1025.5" y="245.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="245.0" width="2.6" height="3.6"/><rect class="wl" x="1033.9" y="245.0" width="2.6" height="3.6"/><rect class="wl" x="1025.5" y="252.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="252.0" width="2.6" height="3.6"/><rect class="wl" x="1033.9" y="252.0" width="2.6" height="3.6"/><rect class="wl" x="1025.5" y="259.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="259.0" width="2.6" height="3.6"/><rect class="wd" x="1033.9" y="259.0" width="2.6" height="3.6"/><rect class="wl" x="1025.5" y="266.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="266.0" width="2.6" height="3.6"/><rect class="wl" x="1033.9" y="266.0" width="2.6" height="3.6"/><rect class="wd" x="1025.5" y="273.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="273.0" width="2.6" height="3.6"/><rect class="wl" x="1033.9" y="273.0" width="2.6" height="3.6"/><rect class="wl" x="1025.5" y="280.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="280.0" width="2.6" height="3.6"/><rect class="wl" x="1033.9" y="280.0" width="2.6" height="3.6"/><rect class="wl" x="1025.5" y="287.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="287.0" width="2.6" height="3.6"/><rect class="wl" x="1033.9" y="287.0" width="2.6" height="3.6"/><rect class="wd" x="1025.5" y="294.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="294.0" width="2.6" height="3.6"/><rect class="wd" x="1033.9" y="294.0" width="2.6" height="3.6"/><rect class="wl" x="1025.5" y="301.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="301.0" width="2.6" height="3.6"/><rect class="wl" x="1033.9" y="301.0" width="2.6" height="3.6"/><rect class="wl" x="1025.5" y="308.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="308.0" width="2.6" height="3.6"/><rect class="wl" x="1033.9" y="308.0" width="2.6" height="3.6"/><rect class="wd" x="1025.5" y="315.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="315.0" width="2.6" height="3.6"/><rect class="wl wf" x="1033.9" y="315.0" width="2.6" height="3.6" style="animation-delay:1.9s"/><rect class="wl" x="1025.5" y="322.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="322.0" width="2.6" height="3.6"/><rect class="wl" x="1033.9" y="322.0" width="2.6" height="3.6"/><rect class="wl" x="1025.5" y="329.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="329.0" width="2.6" height="3.6"/><rect class="wl" x="1033.9" y="329.0" width="2.6" height="3.6"/><rect class="wl" x="1025.5" y="336.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="336.0" width="2.6" height="3.6"/><rect class="wd" x="1033.9" y="336.0" width="2.6" height="3.6"/><rect class="wl" x="1025.5" y="343.0" width="2.6" height="3.6"/><rect class="wl" x="1029.7" y="343.0" width="2.6" height="3.6"/><rect class="wl" x="1033.9" y="343.0" width="2.6" height="3.6"/>
+  </g></g>
+<rect y="349" width="1080" height="2" fill="url(#hz)" filter="url(#glow)" opacity="0.9"/>
+<text class="tick" x="58.9" y="367">JUL</text><text class="tick" x="134.3" y="367">AUG</text><text class="tick" x="228.7" y="367">SEP</text><text class="tick" x="304.2" y="367">OCT</text><text class="tick" x="379.6" y="367">NOV</text><text class="tick" x="474.0" y="367">DEC</text><text class="tick" x="549.4" y="367">JAN</text><text class="tick" x="624.9" y="367">FEB</text><text class="tick" x="700.4" y="367">MAR</text><text class="tick" x="794.7" y="367">APR</text><text class="tick" x="870.2" y="367">MAY</text><text class="tick" x="964.5" y="367">JUN</text>
+<text class="title" x="42" y="58" filter="url(#glow)">MINBGAMES</text>
+<text class="sub" x="42" y="80">ONE YEAR OF COMMITS · REBUILT NIGHTLY</text>
+<text class="total" x="1038" y="56" text-anchor="end" filter="url(#glow)">40</text>
+<text class="sub" x="1038" y="76" text-anchor="end">CONTRIBUTIONS · LAST 365 DAYS</text>
+<text class="stats" x="540" y="468" text-anchor="middle">LONGEST STREAK 3D   ·   CURRENT 0D   ·   PEAK 5/day (Jul 5)   ·   SYNCED 2026-07-02</text>
+</svg>

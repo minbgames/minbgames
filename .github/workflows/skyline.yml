@@ -1,0 +1,40 @@
+name: skyline
+
+on:
+  schedule:
+    - cron: "17 15 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["src/**", ".github/workflows/skyline.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Generate skyline
+        run: node src/build.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.SKYLINE_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_LOGIN: ${{ github.repository_owner }}
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dist/skyline.svg
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "chore: rebuild skyline $(date -u +%F)"
+            git push
+          fi
