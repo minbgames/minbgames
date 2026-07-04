@@ -11,13 +11,16 @@ const HW = 10;
 const HH = 5;
 const MAX_H = 42;
 const OY = 118;
+const RISE_DUR = 2.2;
+const RISE_LEN = 0.55;
+const RISE_STEP = 0.025;
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const RAMP = [
-  [0x37, 0x30, 0xa3],
-  [0x7c, 0x3a, 0xed],
-  [0xc0, 0x26, 0xd3],
-  [0xff, 0x3f, 0xd8],
-  [0x00, 0xe5, 0xff],
+  [0x0e, 0x44, 0x29],
+  [0x00, 0x6d, 0x32],
+  [0x26, 0xa6, 0x41],
+  [0x39, 0xd3, 0x53],
+  [0x9b, 0xff, 0xa8],
 ];
 
 async function Gql(query, variables) {
@@ -32,21 +35,18 @@ async function Gql(query, variables) {
   return json.data;
 }
 
-async function FetchYears() {
-  const meta = await Gql(`query($login:String!){ user(login:$login){ createdAt } }`, { login: LOGIN });
-  const firstYear = new Date(meta.user.createdAt).getUTCFullYear();
-  const nowYear = new Date().getUTCFullYear();
-  const years = [];
-  for (let y = nowYear; y >= firstYear; y--) years.push(y);
-
-  const parts = years.map((y) => {
-    const to = y === nowYear ? new Date().toISOString() : `${y}-12-31T23:59:59Z`;
-    return `y${y}: contributionsCollection(from:"${y}-01-01T00:00:00Z", to:"${to}"){
-      contributionCalendar{ totalContributions weeks{ contributionDays{ date contributionCount } } }
-    }`;
-  });
-  const data = await Gql(`query($login:String!){ user(login:$login){ ${parts.join("\n")} } }`, { login: LOGIN });
-  return years.map((y) => ({ year: y, cal: data.user[`y${y}`].contributionCalendar }));
+async function FetchYear(year) {
+  const data = await Gql(
+    `query($login:String!,$from:DateTime!,$to:DateTime!){
+      user(login:$login){
+        contributionsCollection(from:$from,to:$to){
+          contributionCalendar{ totalContributions weeks{ contributionDays{ date contributionCount } } }
+        }
+      }
+    }`,
+    { login: LOGIN, from: `${year}-01-01T00:00:00Z`, to: new Date().toISOString() }
+  );
+  return data.user.contributionsCollection.contributionCalendar;
 }
 
 function Mulberry32(seed) {
@@ -113,7 +113,7 @@ function RenderStars(seed) {
     const x = (14 + rng() * (W - 28)).toFixed(1);
     const y = (12 + rng() * 130).toFixed(1);
     const r = (rng() * 1.1 + 0.4).toFixed(2);
-    out += `<circle class="s" cx="${x}" cy="${y}" r="${r}" fill="#cfe8ff" style="animation-duration:${(rng() * 3 + 2).toFixed(1)}s;animation-delay:${(rng() * 4).toFixed(1)}s"/>`;
+    out += `<circle class="s" cx="${x}" cy="${y}" r="${r}" fill="#d8f5e3" style="animation-duration:${(rng() * 3 + 2).toFixed(1)}s;animation-delay:${(rng() * 4).toFixed(1)}s"/>`;
   }
   return out;
 }
@@ -128,22 +128,27 @@ function RenderPlatform(ox, maxW) {
   const cx = pts.reduce((a, p) => a + p[0], 0) / 4;
   const cy = pts.reduce((a, p) => a + p[1], 0) / 4;
   const grow = (f) => pts.map((p) => `${(cx + (p[0] - cx) * f).toFixed(1)},${(cy + (p[1] - cy) * f).toFixed(1)}`).join(" ");
-  return `<polygon points="${grow(1.1)}" transform="translate(0 7)" fill="#050512" opacity="0.9"/>
-  <polygon points="${grow(1.1)}" fill="#0b0b22" stroke="url(#hz)" stroke-width="1.4" opacity="0.95" filter="url(#glow)"/>`;
+  return `<polygon points="${grow(1.1)}" transform="translate(0 7)" fill="#02100a" opacity="0.9"/>
+  <polygon points="${grow(1.1)}" fill="#06170f" stroke="url(#hz)" stroke-width="1.4" opacity="0.95" filter="url(#glow)"/>`;
 }
 
-function RenderCube(cx, cy, h, base, glow, title, rng) {
+function RiseAnim(s) {
+  const start = Math.max(0.001, (s * RISE_STEP) / RISE_DUR);
+  const end = Math.min(0.999, (s * RISE_STEP + RISE_LEN) / RISE_DUR);
+  return `<animateTransform attributeName="transform" type="scale" calcMode="spline" dur="${RISE_DUR}s" values="1 0;1 0;1 1;1 1" keyTimes="0;${start.toFixed(3)};${end.toFixed(3)};1" keySplines="0 0 1 1;0.22 1 0.36 1;0 0 1 1"/>`;
+}
+
+function RenderCube(h, t, s, title, rng) {
   const f = (n) => +n.toFixed(1);
-  const top = `M${f(cx)} ${f(cy - HH - h)}L${f(cx + HW)} ${f(cy - h)}L${f(cx)} ${f(cy + HH - h)}L${f(cx - HW)} ${f(cy - h)}Z`;
-  if (h === 0) return `<g><title>${title}</title><path d="${top}" fill="${base}" stroke="#26264f" stroke-width="0.5"/></g>`;
-  const right = `M${f(cx + HW)} ${f(cy - h)}L${f(cx)} ${f(cy + HH - h)}L${f(cx)} ${f(cy + HH)}L${f(cx + HW)} ${f(cy)}Z`;
-  const left = `M${f(cx - HW)} ${f(cy - h)}L${f(cx)} ${f(cy + HH - h)}L${f(cx)} ${f(cy + HH)}L${f(cx - HW)} ${f(cy)}Z`;
-  const c = RampColor(glow.t);
-  const pulse = glow.t >= 0.72 ? ` class="gp" style="animation-delay:${(rng() * 3).toFixed(1)}s" filter="url(#glow)"` : "";
-  return `<g><title>${title}</title>
+  const top = `M0 ${f(-HH - h)}L${HW} ${f(-h)}L0 ${f(HH - h)}L${-HW} ${f(-h)}Z`;
+  const right = `M${HW} ${f(-h)}L0 ${f(HH - h)}L0 ${HH}L${HW} 0Z`;
+  const left = `M${-HW} ${f(-h)}L0 ${f(HH - h)}L0 ${HH}L${-HW} 0Z`;
+  const c = RampColor(t);
+  const pulse = t >= 0.72 ? ` class="gp" style="animation-delay:${(rng() * 3).toFixed(1)}s" filter="url(#glow)"` : "";
+  return `<g><title>${title}</title>${RiseAnim(s)}
     <path d="${left}" fill="${Rgb(c, 0.42)}"/>
     <path d="${right}" fill="${Rgb(c, 0.72)}"/>
-    <path d="${top}" fill="${Rgb(c, 1.18)}"${pulse}/>
+    <path d="${top}" fill="${Rgb(c, 1.15)}"${pulse}/>
   </g>`;
 }
 
@@ -160,44 +165,43 @@ function RenderTerrain(grid, ox, maxCount) {
       const cx = ox + (w - d) * HW;
       const cy = OY + (w + d) * HH;
       if (day.count === -1) {
-        out += `<path d="M${cx} ${cy - HH}L${cx + HW} ${cy}L${cx} ${cy + HH}L${cx - HW} ${cy}Z" fill="#0c0c24" stroke="#1c1c3e" stroke-width="0.5"/>`;
+        out += `<path d="M${cx} ${cy - HH}L${cx + HW} ${cy}L${cx} ${cy + HH}L${cx - HW} ${cy}Z" fill="#0b160f" stroke="#152418" stroke-width="0.5"/>`;
         continue;
       }
       const title = `${day.date} · ${day.count} commit${day.count === 1 ? "" : "s"}`;
       if (day.count === 0) {
-        out += RenderCube(cx, cy, 0, "#16163a", { t: 0 }, title, rng);
+        out += `<g><title>${title}</title><path d="M${cx} ${cy - HH}L${cx + HW} ${cy}L${cx} ${cy + HH}L${cx - HW} ${cy}Z" fill="#12241a" stroke="#1e3a2a" stroke-width="0.5"/></g>`;
         continue;
       }
       const t = Math.pow(day.count / maxCount, 0.6);
       const h = Math.round((4 + t * (MAX_H - 4)) * 10) / 10;
-      out += RenderCube(cx, cy, h, "", { t }, title, rng);
+      out += `<g transform="translate(${cx} ${cy})">${RenderCube(h, t, s, title, rng)}</g>`;
     }
   }
   return out;
 }
 
-function RenderSvg(year, grid, stats, isCurrent) {
+function RenderSvg(year, grid, stats) {
   const maxW = grid.length - 1;
   const ox = Math.round(W / 2 - ((maxW - 6) / 2) * HW);
   const maxCount = Math.max(1, ...grid.flat().filter(Boolean).map((d) => d.count));
   const updated = new Date().toISOString().slice(0, 10);
   const peakLabel = stats.peak.date ? `PEAK ${stats.peak.count}/DAY (${FmtDate(stats.peak.date).toUpperCase()})` : "PEAK —";
-  const range = isCurrent ? `JAN 1 → ${FmtDate(updated).toUpperCase()}` : `FULL YEAR`;
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${LOGIN} ${year} contributions in 3D">
 <defs>
   <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#050514"/>
-    <stop offset="0.6" stop-color="#0e0b30"/>
-    <stop offset="1" stop-color="#26104b"/>
+    <stop offset="0" stop-color="#04060f"/>
+    <stop offset="0.6" stop-color="#071712"/>
+    <stop offset="1" stop-color="#0c2b1c"/>
   </linearGradient>
   <linearGradient id="hz" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#00e5ff"/>
-    <stop offset="0.5" stop-color="#ff3fd8"/>
-    <stop offset="1" stop-color="#9d5cff"/>
+    <stop offset="0" stop-color="#39d353"/>
+    <stop offset="0.5" stop-color="#00e5a8"/>
+    <stop offset="1" stop-color="#26a641"/>
   </linearGradient>
   <linearGradient id="tail" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="#fff" stop-opacity="0"/>
-    <stop offset="1" stop-color="#cfe8ff"/>
+    <stop offset="1" stop-color="#d8f5e3"/>
   </linearGradient>
   <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
     <feGaussianBlur stdDeviation="2" result="b"/>
@@ -206,11 +210,11 @@ function RenderSvg(year, grid, stats, isCurrent) {
 </defs>
 <style>
   text{font-family:'JetBrains Mono','Fira Code',ui-monospace,monospace}
-  .title{font-size:26px;font-weight:700;letter-spacing:7px;fill:#00e5ff;animation:fk 7s infinite}
-  .sub{font-size:10px;letter-spacing:3px;fill:#8888c8}
-  .year{font-size:44px;font-weight:700;letter-spacing:3px;fill:#ff3fd8}
-  .total{font-size:13px;letter-spacing:2px;fill:#9d8fe0}
-  .stats{font-size:11px;letter-spacing:2px;fill:#6fb9d4}
+  .title{font-size:26px;font-weight:700;letter-spacing:7px;fill:#39d353;animation:fk 7s infinite}
+  .sub{font-size:10px;letter-spacing:3px;fill:#7da58e}
+  .year{font-size:44px;font-weight:700;letter-spacing:3px;fill:#7ee787}
+  .total{font-size:13px;letter-spacing:2px;fill:#8fd9a8}
+  .stats{font-size:11px;letter-spacing:2px;fill:#58c48a}
   .s{animation:tw 3s ease-in-out infinite both}
   .gp{animation:gp 3.2s ease-in-out infinite}
   .shoot{animation:sh 13s linear infinite}
@@ -224,50 +228,36 @@ ${RenderStars(year)}
 <g>
   <circle cx="560" cy="62" r="34" fill="#f5ecd7" opacity="0.07"/>
   <circle cx="560" cy="62" r="20" fill="#f5ecd7" opacity="0.9"/>
-  <circle cx="569" cy="55" r="17" fill="#0e0b30"/>
+  <circle cx="569" cy="55" r="17" fill="#071712"/>
 </g>
 <g class="shoot"><line x1="0" y1="0" x2="64" y2="22" stroke="url(#tail)" stroke-width="1.5" stroke-linecap="round"/></g>
 ${RenderPlatform(ox, maxW)}
 ${RenderTerrain(grid, ox, maxCount)}
 <text class="title" x="34" y="52" filter="url(#glow)">${LOGIN.toUpperCase()}</text>
-<text class="sub" x="34" y="74">3D COMMIT TERRAIN · ${range} · REBUILT NIGHTLY</text>
+<text class="sub" x="34" y="74">3D COMMIT TERRAIN · JAN 1 → ${FmtDate(updated).toUpperCase()} · REBUILT NIGHTLY</text>
 <text class="year" x="${W - 34}" y="58" text-anchor="end" filter="url(#glow)">${year}</text>
 <text class="total" x="${W - 34}" y="82" text-anchor="end">${stats.total.toLocaleString("en-US")} CONTRIBUTIONS</text>
 <text class="stats" x="${W / 2}" y="${H - 14}" text-anchor="middle">ACTIVE ${stats.active}D · LONGEST STREAK ${stats.longest}D · ${peakLabel} · SYNCED ${updated}</text>
 </svg>`;
 }
 
-function RenderReadme(results) {
-  const [head, ...rest] = results;
-  const details = rest
-    .map(
-      (r) =>
-        `<details><summary><b>${r.year}</b> — ${r.stats.total.toLocaleString("en-US")} contributions</summary><br/><img src="dist/y${r.year}.svg" width="100%" alt="${r.year} contribution terrain"/></details>`
-    )
-    .join("\n");
+function RenderReadme(year, stats) {
   return `<div align="center">
 
-<img src="dist/y${head.year}.svg" width="100%" alt="${head.year} contribution terrain" />
+<img src="dist/terrain.svg" width="100%" alt="${year} contribution terrain — ${stats.total} contributions" />
 
-${details}
-
-<sub>**3D COMMIT TERRAIN** — every day as a voxel, height and color follow commit count · hand-built SVG generator, zero dependencies, redrawn nightly by [a single script](src/build.js)</sub>
+<sub>**3D COMMIT TERRAIN ${year}** — every day as a voxel rising from the grid, height and color follow commit count · hand-built SVG generator, zero dependencies, redrawn nightly by [a single script](src/build.js)</sub>
 
 </div>
 `;
 }
 
-const nowYear = new Date().getUTCFullYear();
-const yearData = await FetchYears();
+const year = new Date().getUTCFullYear();
+const cal = await FetchYear(year);
+const grid = BuildGrid(cal, year);
+const stats = CalcStats(grid);
+const svg = RenderSvg(year, grid, stats);
 mkdirSync("dist", { recursive: true });
-const results = [];
-for (const { year, cal } of yearData) {
-  const grid = BuildGrid(cal, year);
-  const stats = CalcStats(grid);
-  const svg = RenderSvg(year, grid, stats, year === nowYear);
-  writeFileSync(`dist/y${year}.svg`, svg);
-  results.push({ year, stats });
-  console.log(`y${year}.svg → ${stats.total} contributions, ${(svg.length / 1024).toFixed(1)} KB`);
-}
-writeFileSync("README.md", RenderReadme(results));
-console.log(`README.md → ${results.length} years`);
+writeFileSync("dist/terrain.svg", svg);
+writeFileSync("README.md", RenderReadme(year, stats));
+console.log(`terrain.svg → ${year}, ${stats.total} contributions, ${(svg.length / 1024).toFixed(1)} KB`);
