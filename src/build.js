@@ -245,8 +245,6 @@ function RenderReadme(year, stats) {
 
 <img src="dist/terrain.svg" width="100%" alt="${year} contribution terrain — ${stats.total} contributions" />
 
-<sub>**3D COMMIT TERRAIN ${year}** — every day as a voxel rising from the grid, height and color follow commit count · hand-built SVG generator, zero dependencies, redrawn nightly by [a single script](src/build.js)</sub>
-
 </div>
 `;
 }
