@@ -11,9 +11,8 @@ const HW = 10;
 const HH = 5;
 const MAX_H = 42;
 const OY = 118;
-const RISE_DUR = 2.2;
-const RISE_LEN = 0.55;
-const RISE_STEP = 0.025;
+const WAVE_DUR = 7;
+const WAVE_POP = 1.45;
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const RAMP = [
   [0x0e, 0x44, 0x29],
@@ -132,20 +131,20 @@ function RenderPlatform(ox, maxW) {
   <polygon points="${grow(1.1)}" fill="#06170f" stroke="url(#hz)" stroke-width="1.4" opacity="0.95" filter="url(#glow)"/>`;
 }
 
-function RiseAnim(s) {
-  const start = Math.max(0.001, (s * RISE_STEP) / RISE_DUR);
-  const end = Math.min(0.999, (s * RISE_STEP + RISE_LEN) / RISE_DUR);
-  return `<animateTransform attributeName="transform" type="scale" calcMode="spline" dur="${RISE_DUR}s" values="1 0;1 0;1 1;1 1" keyTimes="0;${start.toFixed(3)};${end.toFixed(3)};1" keySplines="0 0 1 1;0.22 1 0.36 1;0 0 1 1"/>`;
+function WaveAnim(s, maxS) {
+  const p = 0.05 + 0.84 * (s / maxS);
+  const k = (n) => (p + n).toFixed(3);
+  return `<animateTransform attributeName="transform" type="scale" calcMode="spline" dur="${WAVE_DUR}s" repeatCount="indefinite" values="1 1;1 1;1 ${WAVE_POP};1 1;1 1" keyTimes="0;${k(0)};${k(0.035)};${k(0.07)};1" keySplines="0 0 1 1;0.33 0 0.2 1;0.4 0 0.67 1;0 0 1 1"/>`;
 }
 
-function RenderCube(h, t, s, title, rng) {
+function RenderCube(h, t, s, maxS, title, rng) {
   const f = (n) => +n.toFixed(1);
   const top = `M0 ${f(-HH - h)}L${HW} ${f(-h)}L0 ${f(HH - h)}L${-HW} ${f(-h)}Z`;
   const right = `M${HW} ${f(-h)}L0 ${f(HH - h)}L0 ${HH}L${HW} 0Z`;
   const left = `M${-HW} ${f(-h)}L0 ${f(HH - h)}L0 ${HH}L${-HW} 0Z`;
   const c = RampColor(t);
   const pulse = t >= 0.72 ? ` class="gp" style="animation-delay:${(rng() * 3).toFixed(1)}s" filter="url(#glow)"` : "";
-  return `<g><title>${title}</title>${RiseAnim(s)}
+  return `<g><title>${title}</title>${WaveAnim(s, maxS)}
     <path d="${left}" fill="${Rgb(c, 0.42)}"/>
     <path d="${right}" fill="${Rgb(c, 0.72)}"/>
     <path d="${top}" fill="${Rgb(c, 1.15)}"${pulse}/>
@@ -175,7 +174,7 @@ function RenderTerrain(grid, ox, maxCount) {
       }
       const t = Math.pow(day.count / maxCount, 0.6);
       const h = Math.round((4 + t * (MAX_H - 4)) * 10) / 10;
-      out += `<g transform="translate(${cx} ${cy})">${RenderCube(h, t, s, title, rng)}</g>`;
+      out += `<g transform="translate(${cx} ${cy})">${RenderCube(h, t, s, maxW + 6, title, rng)}</g>`;
     }
   }
   return out;
